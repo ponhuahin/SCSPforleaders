@@ -26,7 +26,7 @@ public class Work_NAME_JOB extends AppCompatActivity {
     private Button editBtn, editBtn1;
     ListView workListView, workListView2;
     private String MoneyString;
-    private String W_1,name1,W_2;
+    private String W_1,name1,W_2, workListView22;
 
 
     private SQLiteDatabase database;
@@ -97,16 +97,18 @@ public class Work_NAME_JOB extends AppCompatActivity {
         });
 
 //        / เรียกฐานข้อมูล มาใช้แล้ว รวมรายได้ ทั้งหมด
-//        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
-////        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM Job_db", null);
-//        Cursor cursor = sqLiteDatabase.rawQuery("SELECT SUM(Money_Job) FROM Job_db", null);
-//        cursor.moveToFirst();
-//        workListView2 = (ListView) findViewById(R.id.work_ListView2);
 
+
+
+//        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
+//        Cursor cursor22 = sqLiteDatabase.rawQuery("SELECT SUM(Withdraw_Wor),SUM(Workoff_Wor) FROM Workoff_db WHERE ID_Emp_Wor= '"+ W_2 +"'", null);
+//        cursor22.moveToFirst();
+//        workListView2 = (ListView) findViewById(R.id.work_ListView2);
+//        workListView2.setAdapter(adapter);
+
+        // เริ่ม
         SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
-//        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM Job_db", null);
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT SUM(Withdraw_Wor),SUM(Workoff_Wor) FROM Workoff_db WHERE " +
-                " ID_Emp_Wor= '"+ W_2 +"'", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT SUM(Withdraw_Wor),SUM(Workoff_Wor) FROM Workoff_db WHERE ID_Emp_Wor= '"+ W_2 +"'", null);
         cursor.moveToFirst();
         TextView name_Text1 = (TextView) findViewById(R.id.name_Text);   //เชื่อมต่อTextView หน้าออกแบบกับ หน้าโค้ด
         TextView name_Text2 = (TextView) findViewById(R.id.name_Text2);  //เชื่อมต่อTextView หน้าออกแบบกับ หน้าโค้ด
@@ -134,6 +136,8 @@ public class Work_NAME_JOB extends AppCompatActivity {
         final ListView_Work adapter = new ListView_Work(this, myList);
         workListView.setAdapter(adapter);
         work_listDAO.close();
+
+
     }
 
     private void bindWidget() {

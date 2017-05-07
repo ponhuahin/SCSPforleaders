@@ -3,73 +3,78 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#ffffff"
     android:gravity="center_vertical">
 
     <LinearLayout
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:gravity="center_vertical">
 
+        <!--android:layout_marginEnd="10dp"-->
+        <!--android:layout_marginStart="10dp"-->
         <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginLeft="5dp"-->
-            <!--android:text="เบิก : "-->
-            <!--android:textSize="10sp" />-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:text="เบิก : "-->
+        <!--android:textSize="10sp" />-->
 
         <TextView
+            android:layout_marginRight="20dp"
+            android:gravity="right"
             android:id="@+id/work_Name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" "
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="เบิก "
             android:textColor="@color/lv2"
             android:textSize="15sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="#e9d8d8"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2"
+        android:layout_weight="1"
+        android:background="#ecebeb"
         android:gravity="center_vertical">
 
+        <!--android:layout_marginEnd="10dp"-->
+        <!--android:layout_marginStart="10dp"-->
         <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="ทำงาน :"-->
-            <!--android:textSize="10sp" />-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="ทำงาน :"-->
+        <!--android:textSize="10sp" />-->
 
         <TextView
+            android:gravity="center"
             android:id="@+id/work_Username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" "
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="ทำงาน "
             android:textSize="15sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:gravity="center_vertical">
-
+        <!--android:layout_marginEnd="10dp"-->
+        <!--android:layout_marginStart="10dp"-->
         <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="บันทึก :"-->
-            <!--android:textSize="10sp" />-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="บันทึก :"-->
+        <!--android:textSize="10sp" />-->
 
         <TextView
+            android:gravity="center"
             android:id="@+id/work_Password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" "
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="เวลา "
             android:textSize="10sp" />
     </LinearLayout>
 </LinearLayout>

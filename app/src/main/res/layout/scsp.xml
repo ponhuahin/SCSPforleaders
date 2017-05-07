@@ -8,10 +8,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/ppp"
@@ -48,10 +48,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="2"
-                    android:background="#d691f9e4"
+                    android:background="#a76f3a"
                     android:orientation="vertical">
 
                     <TextView
+                        android:textColor="#ffffff"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
                         android:gravity="center"
@@ -59,6 +60,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:textColor="#ffffff"
                         android:id="@+id/job_Text"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -71,10 +73,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="2"
-                    android:background="#d6c7f991"
+                    android:background="#b17d4d"
                     android:orientation="vertical">
 
                     <TextView
+                        android:textColor="#ffffff"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
                         android:gravity="center"
@@ -82,6 +85,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:textColor="#ffffff"
                         android:id="@+id/job_Text2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -98,6 +102,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:textColor="#434343"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
                         android:gravity="center"
@@ -110,7 +115,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="คงเหลือ"
-                        android:textColor="#f70000"
+                        android:textColor="#fc5454"
                         android:textSize="20dp" />
                 </LinearLayout>
 
@@ -129,28 +134,39 @@
             <!--android:drawableTop="@drawable/a1"-->
             <!--android:drawableBottom="@drawable/a1"-->
             <Button
-
+                android:textStyle="bold"
+                android:textSize="17dp"
                 android:id="@+id/p1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
+                android:layout_marginBottom="2.5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="2.5dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
-                android:background="#9eaff7"
-                android:drawableLeft="@drawable/a1"
+                android:background="#faaf64"
+                android:drawableBottom="@drawable/aaa"
                 android:drawablePadding="0dp"
+                android:drawableTop="@drawable/aaa1"
                 android:gravity="center"
                 android:onClick="p1"
                 android:text="เพิ่ม คนงาน" />
 
             <Button
+                android:textStyle="bold"
+                android:textSize="17dp"
                 android:id="@+id/p2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
+                android:layout_marginBottom="2.5dp"
+                android:layout_marginLeft="2.5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
-                android:background="#d6c7f991"
-                android:drawableLeft="@drawable/a4"
+                android:background="#a7794e"
+                android:drawableBottom="@drawable/aaa"
                 android:drawablePadding="0dp"
+                android:drawableTop="@drawable/aaa4"
                 android:onClick="p2"
                 android:text="ทำงาน/เบิกเงิน" />
         </LinearLayout>
@@ -163,26 +179,38 @@
             android:orientation="horizontal">
 
             <Button
+                android:textStyle="bold"
+                android:textSize="17dp"
                 android:id="@+id/p4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="2.5dp"
+                android:layout_marginTop="2.5dp"
                 android:layout_weight="1"
-                android:background="#d691f9e4"
+                android:background="#a76f3a"
+                android:drawableBottom="@drawable/aaa"
                 android:drawablePadding="0dp"
-                android:drawableLeft="@drawable/a3"
+                android:drawableTop="@drawable/aaa3"
                 android:onClick="p4"
                 android:text="เพิ่ม งาน" />
             <!--android:layout_centerHorizontal="true"-->
             <Button
+                android:textStyle="bold"
+                android:textSize="17dp"
                 android:id="@+id/p5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2.5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2.5dp"
                 android:layout_weight="1"
                 android:background="#d6f9ee91"
+                android:drawableBottom="@drawable/aaa"
                 android:drawablePadding="0dp"
-                android:drawableLeft="@drawable/a2"
+                android:drawableTop="@drawable/aaa2"
                 android:onClick="p5"
                 android:text="รายงาน" />
         </LinearLayout>
