@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
                 cursor.moveToNext();
             }// จบ for
         } catch (Exception e){
-            e.printStackTrace();
-        }
+        e.printStackTrace();
+    }
         return result;
     } // จบ checkUser
 

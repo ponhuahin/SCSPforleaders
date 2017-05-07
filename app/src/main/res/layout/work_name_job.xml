@@ -103,12 +103,14 @@
                     android:textSize="15dp" />
 
                 <EditText
-                    android:layout_marginRight="30dp"
-                    android:id="@+id/W_Idcard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:textSize="15dp" />
+                android:layout_marginRight="30dp"
+                android:id="@+id/W_Idcard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:textSize="15dp" />
+
+                    <!--android:textSize="15dp" />-->
                 <!--<TextView-->
                 <!--android:id="@+id/W_Idcard"-->
                 <!--android:layout_width="match_parent"-->

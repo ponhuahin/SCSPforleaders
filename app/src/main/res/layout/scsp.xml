@@ -28,14 +28,14 @@
                 android:layout_height="100dp"
                 android:src="@drawable/ddd1112" />
 
-            <TextView
-                android:id="@+id/admin_db1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:text="ชื่อ"
-                android:textSize="30dp"
-                android:textStyle="bold" />
+            <!--<TextView-->
+                <!--android:id="@+id/admin_db1"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="20dp"-->
+                <!--android:text="ชื่อ"-->
+                <!--android:textSize="30dp"-->
+                <!--android:textStyle="bold" />-->
             <!--android:layout_below="@+id/admin_db1"-->
             <LinearLayout
 

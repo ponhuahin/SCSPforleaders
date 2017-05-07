@@ -105,7 +105,7 @@ public class Work_NAME_JOB extends AppCompatActivity {
 //        cursor22.moveToFirst();
 //        workListView2 = (ListView) findViewById(R.id.work_ListView2);
 //        workListView2.setAdapter(adapter);
-
+        try {
         // เริ่ม
         SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT SUM(Withdraw_Wor),SUM(Workoff_Wor) FROM Workoff_db WHERE ID_Emp_Wor= '"+ W_2 +"'", null);
@@ -124,7 +124,9 @@ public class Work_NAME_JOB extends AppCompatActivity {
         name_Text3.setText(name1 = String.valueOf(ss - ss1));
 
 //        / เรียกฐานข้อมูล มาใช้แล้ว รวมรายได้ ทั้งหมด จบ
-
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     } // จบ onCreate
 
     protected void onResume() {

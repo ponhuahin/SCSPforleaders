@@ -16,19 +16,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Admin_Eait"/>
-        <activity android:name=".Admin_Show"/>
-        <activity android:name=".Admin_SignUp"/>
-        <activity android:name=".SCSP"/>
-        <activity android:name=".Name_Add"/>
-        <activity android:name=".Name_Eait"/>
-        <activity android:name=".Name_Show"/>
-        <activity android:name=".Job_Add"/>
-        <activity android:name=".Job_Edit"/>
-        <activity android:name=".Job_Show"/>
-        <activity android:name=".Z_Name_List"/>
-        <activity android:name=".Z_Name_SignUp"/>
-        <activity android:name=".Work_NAME_JOB"/>
+        <activity android:name=".Admin_Eait" />
+        <activity android:name=".Admin_Show" />
+        <activity android:name=".Admin_SignUp" />
+        <activity android:name=".SCSP" />
+        <activity android:name=".Name_Add" />
+        <activity android:name=".Name_Eait" />
+        <activity android:name=".Name_Show" />
+        <activity android:name=".Job_Add" />
+        <activity android:name=".Job_Edit" />
+        <activity android:name=".Job_Show" />
+        <activity android:name=".Z_Name_List" />
+        <activity android:name=".Z_Name_SignUp" />
+        <activity android:name=".Work_NAME_JOB" />
+        <activity android:name=".P1" />
+        <activity android:name=".Report_Show"></activity>
     </application>
 
 </manifest>

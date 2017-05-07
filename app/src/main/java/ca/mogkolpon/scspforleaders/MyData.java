@@ -71,7 +71,7 @@ public class MyData extends SQLiteOpenHelper {
             "DateWork_Wor TEXT, "+         //เวลาทำงาน
             "DateOut_Wor TEXT, "+          //เวลาเลิกงาน
             "Withdraw_Wor TEXT,"+           // เบิกเงิน
-            "ID_Emp_Wor int, "+         //ID พนักงาน
+            "ID_Emp_Wor TEXT, "+         //ID พนักงาน
             "DateApp_Wor TEXT"+          //วันที่บันทึก
             ");";
 
@@ -86,6 +86,43 @@ public class MyData extends SQLiteOpenHelper {
         db.execSQL(tableCreateSQL2);
         db.execSQL(tableCreateSQL3);
         db.execSQL(tableCreateSQL4);
+
+//        String insertData1 = "INSERT INTO Employee_db (" +
+//                "ID_Emp,Position_Emp,Salary_Emp," +
+//                "Idcard_Emp,Name_Emp,Nickname_Emp,Sex_Emp,DateBirth_Emp,Age_Emp," +
+//                "Address_Emp,Tele_Emp," +
+//                "Line_Emp,Facebook_Emp,Email_Emp,"+
+//                "DateApp_Emp,Image_Emp" +
+//                ") VALUES (" +
+//                "'1','it','300'," +
+//                "'1457896542135','mokaol pon','pon','ชาย','01/04/1991','26'," +
+//                "'huahin','0841921739'," +
+//                "'L','f','e',"+
+//                "'01/04/1991','1'" +
+//                ");";
+//                // คำสั่ง INSERT เพื่มข้อมูล ในตาราง Employee_db ในคอลัม Username ข้อมูลที่ใส่คือ admin
+//        db.execSQL(insertData1);
+
+//        String insertData2 = "INSERT INTO Job_db (" +
+//                "ID_Job,Name_Job,Address_Job,Money_Job," +
+//                "DateGet_Job,DateDue_Job,Specs_Job," +
+//                "Name_Com_Job,Address_Com_Job,Tele_Job,Line_Job,Facebook_Job,Email_Job,DateApp_Job" +
+//                ") VALUES (" +
+//                "'1','ttoo','huahin','50000'," +
+//                "'01/04/2016','01/04/2017','ทำงานให้เสร็จทันเวลา'," +
+//                "'pon.com','huahin','0841921739','l','f','e','01/04/2017'" +
+//                ");";
+//        db.execSQL(insertData2);
+
+//        String insertData3 = "INSERT INTO Job_db (" +
+//                "ID_Wor,Workoff_Wor,ID_Job_Wor,DateWork_Wor," +
+//                "DateOut_Wor,Withdraw_Wor,ID_Emp_Wor,DateApp_Wor" +
+//                ") VALUES (" +
+//                "'1','1','1','01/04/2017'," +
+//                "'01/04/2017','100','1','01/04/1991'" +
+//                ");";
+//        db.execSQL(insertData3);
+
     }
 
     @Override

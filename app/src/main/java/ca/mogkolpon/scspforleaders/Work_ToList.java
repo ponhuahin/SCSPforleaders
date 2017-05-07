@@ -25,12 +25,12 @@ public class Work_ToList implements Serializable {
         this.ID_Job_Wor = ID_Job_Wor;
     }
 
-    public int getID_Emp_Wor() {
+    public String getID_Emp_Wor() {
         return ID_Emp_Wor;
     }
 
-    public void setID_Emp_Wor(int ID_Emp_Wor) {
-        this.ID_Emp_Wor = ID_Emp_Wor;
+    public void setID_Emp_Wor(String ID_Emp_Wor) {
+        ID_Emp_Wor = ID_Emp_Wor;
     }
 
     public String getWorkoff_Wor() {
@@ -74,6 +74,6 @@ public class Work_ToList implements Serializable {
     }
 
     private int ID_Job_Wor;
-    private int ID_Emp_Wor;
-    private String Workoff_Wor,DateWork_Wor,DateOut_Wor,DateApp_Wor,Withdraw_Wor;
+//    private int ID_Emp_Wor;
+    private String Workoff_Wor,DateWork_Wor,DateOut_Wor,DateApp_Wor,ID_Emp_Wor,Withdraw_Wor;
 }

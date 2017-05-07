@@ -31,6 +31,7 @@ public class SCSP extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scsp);
 
+        try {
         /// เรียกฐานข้อมูล มาใช้แล้ว รวมรายได้ ทั้งหมด
         SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
 // โชว์ ชื่อคนล็อกอิน
@@ -39,10 +40,10 @@ public class SCSP extends AppCompatActivity {
 //        TextView admin_db1 = (TextView) findViewById(R.id.admin_db1);
 //        admin_db1.setText(admindb2 = cursor3.getString(1)); // ชื่อแอดมิน
 
-        Cursor cursoro = sqLiteDatabase.rawQuery("SELECT * FROM admin_db", null);
-        cursoro.moveToFirst();
-        TextView admin_db1 = (TextView) findViewById(R.id.admin_db1);
-        admin_db1.setText(admindb2 = cursoro.getString(1));
+//        Cursor cursoro = sqLiteDatabase.rawQuery("SELECT * FROM admin_db", null);
+//        cursoro.moveToFirst();
+//        TextView admin_db1 = (TextView) findViewById(R.id.admin_db1);
+//        admin_db1.setText(admindb2 = cursoro.getString(1));
 
 // จบ โชว์ ชื่อคนล็อกอิน
 // รายรับ
@@ -82,8 +83,11 @@ public class SCSP extends AppCompatActivity {
 //        JobText3.setText(JobText11 -JobText22);
 //        JobText3.setText(textString = String.valueOf(JobText11 - JobText22));
         JobText3.setText(textString = String.valueOf(a12 - a11));
-
-    }// จบ onCreate
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    // จบ onCreate
 
 
     public void p1(View view) { // เพิ่มคนงาน
@@ -113,7 +117,7 @@ public class SCSP extends AppCompatActivity {
     //
     public void p5(View view) { //บริษัท
         Button p5 = (Button) findViewById(R.id.p5);
-        Intent intent = new Intent(SCSP.this, Z_Name_SignUp.class);
+        Intent intent = new Intent(SCSP.this, Report_Show.class);
         startActivity(intent);
     }// จบ p5
 
