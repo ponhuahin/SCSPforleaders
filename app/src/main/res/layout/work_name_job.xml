@@ -12,9 +12,9 @@
         android:orientation="horizontal">
         <!--android:gravity="center_horizontal"-->
         <LinearLayout
-            android:background="#c3efec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#c3efec"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -159,17 +159,17 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:orientation="horizontal">
 
             <LinearLayout
-                android:background="#c4d0f5bc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#c4d0f5bc"
                 android:orientation="horizontal">
 
                 <TextView
@@ -196,10 +196,10 @@
             </LinearLayout>
 
             <LinearLayout
-                android:background="#c4bcd9f5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#c4bcd9f5"
                 android:orientation="horizontal">
 
                 <TextView
@@ -246,6 +246,33 @@
                 android:layout_weight="1"
                 android:text="ยกเลิก" />
         </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:id="@+id/name_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="ggg" />
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:id="@+id/name_Text2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="ggg" />
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:id="@+id/name_Text3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="ggg" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -286,16 +313,30 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/work_ListView"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="153dp">
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:scrollbars="none">
 
-        </ListView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <ListView
+                    android:id="@+id/work_ListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="233dp">
+
+                </ListView>
+            </LinearLayout>
+        </ScrollView>
         <!--<ListView-->
-            <!--android:id="@+id/work_ListView2"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent">-->
+        <!--android:id="@+id/work_ListView2"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
 
         <!--</ListView>-->
     </LinearLayout>

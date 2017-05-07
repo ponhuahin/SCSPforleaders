@@ -92,14 +92,22 @@ public class Work_NAME_JOB extends AppCompatActivity {
             }
         });
 
-        /// เรียกฐานข้อมูล มาใช้แล้ว รวมรายได้ ทั้งหมด
+//        / เรียกฐานข้อมูล มาใช้แล้ว รวมรายได้ ทั้งหมด
 //        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
 ////        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM Job_db", null);
 //        Cursor cursor = sqLiteDatabase.rawQuery("SELECT SUM(Money_Job) FROM Job_db", null);
 //        cursor.moveToFirst();
 //        workListView2 = (ListView) findViewById(R.id.work_ListView2);
 
-        /// เรียกฐานข้อมูล มาใช้แล้ว รวมรายได้ ทั้งหมด จบ
+        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
+//        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM Job_db", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT SUM(Withdraw_Wor),SUM(Workoff_Wor) FROM Workoff_db", null);
+        cursor.moveToFirst();
+        TextView name_Text1 = (TextView) findViewById(R.id.name_Text);
+        TextView name_Text2 = (TextView) findViewById(R.id.name_Text2);
+        name_Text1.setText(MoneyString = cursor.getString(0));
+        name_Text2.setText(s2 = cursor.getString(1));
+//        / เรียกฐานข้อมูล มาใช้แล้ว รวมรายได้ ทั้งหมด จบ
 
     } // จบ onCreate
 

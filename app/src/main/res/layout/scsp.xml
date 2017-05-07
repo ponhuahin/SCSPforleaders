@@ -8,10 +8,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:orientation="vertical"
         android:layout_alignParentTop="true"
-        android:orientation="vertical">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:id="@+id/ppp"
@@ -146,7 +146,7 @@
                 android:id="@+id/p2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="#d6c7f991"
                 android:drawableLeft="@drawable/a4"
@@ -170,7 +170,7 @@
                 android:layout_weight="1"
                 android:background="#d691f9e4"
                 android:drawablePadding="0dp"
-                android:drawableTop="@drawable/a3"
+                android:drawableLeft="@drawable/a3"
                 android:onClick="p4"
                 android:text="เพิ่ม งาน" />
             <!--android:layout_centerHorizontal="true"-->
@@ -182,7 +182,7 @@
                 android:layout_weight="1"
                 android:background="#d6f9ee91"
                 android:drawablePadding="0dp"
-                android:drawableTop="@drawable/a2"
+                android:drawableLeft="@drawable/a2"
                 android:onClick="p5"
                 android:text="รายงาน" />
         </LinearLayout>
