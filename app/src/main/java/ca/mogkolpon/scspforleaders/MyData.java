@@ -67,7 +67,7 @@ public class MyData extends SQLiteOpenHelper {
     private static final String tableCreateSQL4 = "CREATE TABLE Workoff_db ("+     //ตาราง ทำงาน
             "ID_Wor INTEGER PRIMARY KEY AUTOINCREMENT, "+        //ID รัน AUTOINCREMENT
             "Workoff_Wor TEXT, "+          //ทำงาน / หยุด
-            "ID_Job_Wor int, "+            //ID งาน
+            "ID_Job_Wor TEXT, "+            //ID งาน
             "DateWork_Wor TEXT, "+         //เวลาทำงาน
             "DateOut_Wor TEXT, "+          //เวลาเลิกงาน
             "Withdraw_Wor TEXT,"+           // เบิกเงิน

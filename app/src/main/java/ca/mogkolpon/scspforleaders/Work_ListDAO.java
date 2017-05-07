@@ -42,11 +42,11 @@ public class Work_ListDAO {
             work_toList1 = new Work_ToList();
             work_toList1.setID_Wor(cursor.getInt(0));                   //id
             work_toList1.setWorkoff_Wor(cursor.getString(1));           //ทำงาน / หยุด
-//            name_toList1.setID_Job_Wor(cursor.getString(2));          //ID งาน
+            work_toList1.setID_Job_Wor(cursor.getString(2));          //ID งาน
             work_toList1.setDateWork_Wor(cursor.getString(3));          //เวลาทำงาน
             work_toList1.setDateOut_Wor(cursor.getString(4));           //เวลาเลิกงาน
             work_toList1.setWithdraw_Wor(cursor.getString(5));          // เบิกเงิน
-//            name_toList1.setID_Emp_Wor(cursor.getString(6));          //ID พนักงาน
+            work_toList1.setID_Emp_Wor(cursor.getString(6));          //ID พนักงาน
             work_toList1.setDateApp_Wor(cursor.getString(7));           //วันที่บันทึก
             workToListst.add(work_toList1);
             cursor.moveToNext();

@@ -17,20 +17,20 @@ public class Work_ToList implements Serializable {
         this.ID_Wor = ID_Wor;
     }
 
-    public int getID_Job_Wor() {
+    public String getID_Job_Wor() {
         return ID_Job_Wor;
     }
 
-    public void setID_Job_Wor(int ID_Job_Wor) {
-        this.ID_Job_Wor = ID_Job_Wor;
+    public void setID_Job_Wor(String id_Job_Wor) {
+        ID_Job_Wor = id_Job_Wor;
     }
 
     public String getID_Emp_Wor() {
         return ID_Emp_Wor;
     }
 
-    public void setID_Emp_Wor(String ID_Emp_Wor) {
-        ID_Emp_Wor = ID_Emp_Wor;
+    public void setID_Emp_Wor(String id_Emp_Wor) {
+        ID_Emp_Wor = id_Emp_Wor;
     }
 
     public String getWorkoff_Wor() {
@@ -73,7 +73,7 @@ public class Work_ToList implements Serializable {
         Withdraw_Wor = withdraw_Wor;
     }
 
-    private int ID_Job_Wor;
+//    private int ID_Job_Wor;
 //    private int ID_Emp_Wor;
-    private String Workoff_Wor,DateWork_Wor,DateOut_Wor,DateApp_Wor,ID_Emp_Wor,Withdraw_Wor;
+    private String ID_Job_Wor,Workoff_Wor,DateWork_Wor,DateOut_Wor,DateApp_Wor,ID_Emp_Wor,Withdraw_Wor;
 }

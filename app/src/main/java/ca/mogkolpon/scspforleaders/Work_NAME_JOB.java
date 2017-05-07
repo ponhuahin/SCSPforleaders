@@ -20,10 +20,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Work_NAME_JOB extends AppCompatActivity {
-    private EditText Workoff_Wor, Withdraw_Wor, W_Idcard_Wor;
+    private EditText Workoff_Wor, Withdraw_Wor, W_Idcard_Wor,W_Name_Wor;
     private Button button;
-    private String Workoff_WorString, Withdraw_WorString, W_Idcard, s2, s3, s4, s5, s6;
-    private TextView a1, d2, d3, d4, d5, d6;
+    private String Workoff_WorString, Withdraw_WorString, W_Idcard, s2, W_Name, s4, s5, s6;
+    private TextView w_Name, d2, d3, d4, d5, d6;
     String Sex_Emp0 = "ชาย";
     DatePickerDialog datePickerDialog;
     private Button editBtn, editBtn1;
@@ -76,10 +76,11 @@ public class Work_NAME_JOB extends AppCompatActivity {
                 Workoff_WorString = Workoff_Wor.getText().toString().trim();
                 Withdraw_WorString = Withdraw_Wor.getText().toString().trim();
                 W_Idcard = W_Idcard_Wor.getText().toString().trim();
+                W_Name= W_Name_Wor.getText().toString().trim();
 
                 MyWork myWork = new MyWork(Work_NAME_JOB.this);
                 myWork.addNewValue(Workoff_WorString,   //ทำงาน / หยุด
-                        Withdraw_WorString,             //งาน
+                        W_Name,             //งาน
                         formattedDate,                   //เวลาทำงาน
                         formattedDate,                  //เวลาเลิกงาน
                         Withdraw_WorString,             // เบิก
@@ -147,6 +148,7 @@ public class Work_NAME_JOB extends AppCompatActivity {
 
     private void bindWidget() {
         W_Idcard_Wor = (EditText) findViewById(R.id.W_Idcard);
+        W_Name_Wor = (EditText) findViewById(R.id.W_Name);
         Workoff_Wor = (EditText) findViewById(R.id.W_1);
         Withdraw_Wor = (EditText) findViewById(R.id.W_W);
         editBtn = (Button) findViewById(R.id.W_But_Save);

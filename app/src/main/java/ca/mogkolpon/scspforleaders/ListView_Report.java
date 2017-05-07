@@ -44,24 +44,24 @@ public class ListView_Report extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
         v = inflater.inflate(R.layout.listview_report, null);
-        TextView textView = (TextView) v.findViewById(R.id.work_Name);
+//        TextView textView = (TextView) v.findViewById(R.id.work_Name);
         TextView textView1 = (TextView) v.findViewById(R.id.work_Username);
-        TextView textView2 = (TextView) v.findViewById(R.id.work_Password);
-        TextView textView3 = (TextView) v.findViewById(R.id.ID_Emp_Wor1);
+//        TextView textView2 = (TextView) v.findViewById(R.id.work_Password);
+        TextView textView3 = (TextView) v.findViewById(R.id.work_Name_Wor);
 
+////        Work_ToList work_toList = myToList.get(position);
+////        textView.setText(work_toList.getWithdraw_Wor());
 //        Work_ToList work_toList = myToList.get(position);
 //        textView.setText(work_toList.getWithdraw_Wor());
-        Work_ToList work_toList = myToList.get(position);
-        textView.setText(work_toList.getWithdraw_Wor());
-
+//
         Work_ToList work_toList1 = myToList.get(position);
         textView1.setText(work_toList1.getWorkoff_Wor());
 
-        Work_ToList work_toList2 = myToList.get(position);
-        textView2.setText(work_toList2.getDateApp_Wor());
+//        Work_ToList work_toList2 = myToList.get(position);
+//        textView2.setText(work_toList2.getDateApp_Wor());
 
         Work_ToList work_toList3 = myToList.get(position);
-        textView3.setText(work_toList3.getID_Emp_Wor());
+        textView3.setText(work_toList3.getID_Job_Wor());
         return v;
     }
 }
