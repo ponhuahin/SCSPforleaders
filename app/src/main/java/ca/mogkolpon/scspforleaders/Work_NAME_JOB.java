@@ -26,6 +26,8 @@ public class Work_NAME_JOB extends AppCompatActivity {
     private Button editBtn, editBtn1;
     ListView workListView, workListView2;
     private String MoneyString;
+    private String W_1,name1,W_2;
+
 
     private SQLiteDatabase database;
     private MyData myData;
@@ -49,7 +51,9 @@ public class Work_NAME_JOB extends AppCompatActivity {
         B2.setText(name_toList.getNickname_Emp());
         B3.setText(name_toList.getIdcard_Emp());
         B4.setText(name_toList.getPosition_Emp());
-        B5.setText(name_toList.getSalary_Emp());
+        B5.setText(name_toList.getSalary_Emp());   //เงินเดือน
+        W_1 = name_toList.getSalary_Emp();
+        W_2= name_toList.getIdcard_Emp();
         // จบ ดึงค่า มา แสดง }
 
         // ปุ้ม เพิ่ม วันทำงาน   //
@@ -101,12 +105,22 @@ public class Work_NAME_JOB extends AppCompatActivity {
 
         SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
 //        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM Job_db", null);
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT SUM(Withdraw_Wor),SUM(Workoff_Wor) FROM Workoff_db", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT SUM(Withdraw_Wor),SUM(Workoff_Wor) FROM Workoff_db WHERE " +
+                " ID_Emp_Wor= '"+ W_2 +"'", null);
         cursor.moveToFirst();
-        TextView name_Text1 = (TextView) findViewById(R.id.name_Text);
-        TextView name_Text2 = (TextView) findViewById(R.id.name_Text2);
-        name_Text1.setText(MoneyString = cursor.getString(0));
+        TextView name_Text1 = (TextView) findViewById(R.id.name_Text);   //เชื่อมต่อTextView หน้าออกแบบกับ หน้าโค้ด
+        TextView name_Text2 = (TextView) findViewById(R.id.name_Text2);  //เชื่อมต่อTextView หน้าออกแบบกับ หน้าโค้ด
+        name_Text1.setText(MoneyString = cursor.getString(0));  //เชื่อมต่อTextView หน้าออกแบบกับ หน้าโค้ด
         name_Text2.setText(s2 = cursor.getString(1));
+
+        TextView name_Text3 = (TextView) findViewById(R.id.name_Text3);
+        int W_name1 = Integer.parseInt(s2);
+        int W_name2 = Integer.parseInt(W_1);
+        int ss=Integer.parseInt(String.valueOf(W_name2 * W_name1));
+        int ss1=Integer.parseInt(MoneyString);
+
+        name_Text3.setText(name1 = String.valueOf(ss - ss1));
+
 //        / เรียกฐานข้อมูล มาใช้แล้ว รวมรายได้ ทั้งหมด จบ
 
     } // จบ onCreate
