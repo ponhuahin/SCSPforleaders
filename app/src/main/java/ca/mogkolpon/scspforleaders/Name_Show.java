@@ -68,4 +68,9 @@ public class Name_Show extends AppCompatActivity {
             }
         }); // จบ กด ค้าง
     } // จบ onResume
+    public void onBackPressed(){
+        Intent intent = new Intent(Name_Show.this, SCSP.class);
+        startActivity(intent);
+        finish();
+    }
 }// จบ class Name_Show

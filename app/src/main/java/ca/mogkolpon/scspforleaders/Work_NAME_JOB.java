@@ -1,9 +1,12 @@
 package ca.mogkolpon.scspforleaders;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -150,4 +153,10 @@ public class Work_NAME_JOB extends AppCompatActivity {
         editBtn1 = (Button) findViewById(R.id.W_but_cancel);
 //        passEditText= (EditText)findViewById(R.id.admin_Pass);
     } // จบ bindWidget
+
+    public void onBackPressed(){
+        Intent intent = new Intent(Work_NAME_JOB.this, SCSP.class);
+        startActivity(intent);
+        finish();
+    }
 } // จบ class Work_NAME_JOB

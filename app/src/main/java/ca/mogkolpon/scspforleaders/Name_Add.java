@@ -53,6 +53,8 @@ public class Name_Add extends AppCompatActivity {
         Butcancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(Name_Add.this, SCSP.class);
+                startActivity(intent);
                 finish();
             }
         }); //  จบ ปุ่ม ยกเลิก Name_cancel
@@ -249,4 +251,10 @@ public class Name_Add extends AppCompatActivity {
 
         Name_Save = (Button) findViewById(R.id.Name_Save);                       // ปุ่ม บันทึก
     } // จบ bindWidget
+
+    public void onBackPressed(){
+        Intent intent = new Intent(Name_Add.this, SCSP.class);
+        startActivity(intent);
+        finish();
+    }
 } // จบ class Name_Add

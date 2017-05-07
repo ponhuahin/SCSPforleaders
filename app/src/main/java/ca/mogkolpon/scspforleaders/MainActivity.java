@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed(){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
         alertDialog.setTitle("SCSP forleaders");
-        alertDialog.setMessage("คุณต้องหารออกจากโปรแกรมหรือไม่ ?");
+        alertDialog.setMessage("คุณต้องการออกจากโปรแกรมหรือไม่ ?");
         alertDialog.setIcon(R.drawable.ddd1112);
         alertDialog.setPositiveButton("ใช้",  new DialogInterface.OnClickListener() {
             @Override

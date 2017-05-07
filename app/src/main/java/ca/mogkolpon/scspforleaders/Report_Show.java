@@ -1,5 +1,6 @@
 package ca.mogkolpon.scspforleaders;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -23,5 +24,10 @@ public class Report_Show extends AppCompatActivity {
         final ListView_Report adapter = new ListView_Report(this, myList);
         workListView.setAdapter(adapter);
         report_listDAO.close();
+    }
+    public void onBackPressed(){
+        Intent intent = new Intent(Report_Show.this, SCSP.class);
+        startActivity(intent);
+        finish();
     }
 }
