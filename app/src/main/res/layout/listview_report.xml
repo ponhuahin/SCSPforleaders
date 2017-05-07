@@ -2,67 +2,72 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="40dp"
     android:background="#ffffff"
     android:gravity="center_vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="40dp"
         android:layout_weight="1"
         android:gravity="center_vertical">
+
         <TextView
+            android:gravity="center|left"
             android:id="@+id/work_Name_Wor"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
             android:text="รหัส "
-            android:textSize="15sp" />
+            android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:background="#ecebeb"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/work_Username"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="ทำงาน "
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
         android:layout_weight="1"
         android:gravity="center_vertical">
-        <TextView
 
-            android:gravity="right"
+        <TextView
+            android:layout_marginRight="10dp"
             android:id="@+id/work_Name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center|right"
             android:text="เบิก "
             android:textColor="@color/lv2"
             android:textSize="15sp" />
         <!--android:layout_marginRight="20dp"-->
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="#ecebeb"
-        android:gravity="center_vertical">
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center_vertical">-->
 
-        <TextView
-            android:gravity="center"
-            android:id="@+id/work_Username"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="ทำงาน "
-            android:textSize="15sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center_vertical">
-
-        <TextView
-            android:gravity="center"
-            android:id="@+id/work_Password"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="เวลา "
-            android:textSize="10sp" />
-    </LinearLayout>
+    <!--<TextView-->
+    <!--android:gravity="center"-->
+    <!--android:id="@+id/work_Password"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:text="เวลา "-->
+    <!--android:textSize="10sp" />-->
+    <!--</LinearLayout>-->
 </LinearLayout>

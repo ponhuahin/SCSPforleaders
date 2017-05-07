@@ -30,10 +30,15 @@ public class Report_ListDAO {
 //        Cursor cursor = database.rawQuery("SELECT * FROM Workoff_db ;", null);
 //        Cursor cursor = database.rawQuery("SELECT COUNT(ID_Job_Wor) AS icount " +
 //                "FROM Workoff_db GROUP BY ID_Job_Wor Having COUNT(ID_Job_Wor)>1", null);
-        Cursor cursor = database.rawQuery("SELECT ID_Job_Wor, Workoff_Wor " +
+//        Cursor cursor = database.rawQuery("SELECT ID_Job_Wor, Workoff_Wor " +
+//                "FROM Workoff_db " +
+//                "GROUP BY ID_Job_Wor " +
+//                "Having COUNT(ID_Job_Wor) ", null);
+        Cursor cursor = database.rawQuery("SELECT ID_Job_Wor, SUM(Workoff_Wor), SUM(Withdraw_Wor) " +
                 "FROM Workoff_db " +
-                "GROUP BY ID_Job_Wor " +
-                "Having COUNT(ID_Job_Wor) , COUNT(Workoff_Wor) ", null);
+                "GROUP BY ID_Job_Wor ", null);
+
+//        SELECT CountryCode,SUM(Budget) AS SumBudget FROM customer GROUP BY CountryCode
 
 //        SELECT     Name, COUNT(Name) AS icount,Addr1
 //        FROM         Customer
@@ -62,7 +67,7 @@ public class Report_ListDAO {
 
             work_toList1.setID_Job_Wor(cursor.getString(0));
             work_toList1.setWorkoff_Wor(cursor.getString(1));
-//            work_toList1.setWithdraw_Wor(cursor.getString(2));
+            work_toList1.setWithdraw_Wor(cursor.getString(2));
 //            work_toList1.setDateApp_Wor(cursor.getString(3));
             workToListst.add(work_toList1);
             cursor.moveToNext();
