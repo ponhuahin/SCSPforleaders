@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.v7.widget.CardView-->
+<!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+<!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:id="@+id/cardView"-->
+<!--android:layout_gravity="center"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:padding="5dp"-->
+<!--card_view:cardUseCompatPadding="true"-->
+<!--card_view:cardCornerRadius="4dp"-->
+<!--card_view:cardElevation="4dp"-->
+<!--card_view:contentPadding="5dp">-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    >
+    <!--android:gravity="center_vertical"-->
+    <ImageView
+        android:layout_margin="10dp"
+        android:id="@+id/name_ListView_Image"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:src="@drawable/user48"/>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="5dp">
+        <!--ส่วนชื่อ -->
+        <LinearLayout
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ชื่อ : "
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/lv_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="เล่น"
+                android:textSize="20sp"
+                android:textColor="@color/lv2"
+                android:layout_weight="2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="เบอร์ :"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/lv_telename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0899999999"
+                android:textSize="15sp"
+                android:layout_weight="2"/>
+        </LinearLayout>
+        <!--วันทำงาน -->
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ทำงาน : "
+                android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/lv_Workoff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="วัน"
+                android:textSize="15sp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="เบิก : "
+                android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/lv_Withdraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="เงิน"
+                android:textSize="15sp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="เหลือ : "
+                android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/lv_funds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="บาท"
+                android:textSize="20sp"
+                android:textColor="@color/lv1"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+    <!--</android.support.v7.widget.CardView>-->

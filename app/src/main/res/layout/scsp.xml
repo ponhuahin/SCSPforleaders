@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pon2121"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ppp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="0dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ddd1112" />
+
+            <TextView
+                android:id="@+id/admin_db1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="ชื่อ"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+            <!--android:layout_below="@+id/admin_db1"-->
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="2"
+                    android:background="#d691f9e4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="รายรับ"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/job_Text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="รายรับ"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="2"
+                    android:background="#d6c7f991"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="รายจ่าย"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/job_Text2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="รายจ่าย"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="2"
+                    android:background="#d6f9ee91"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="คงเหลือ"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/job_Text3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="คงเหลือ"
+                        android:textColor="#f70000"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+            <!--android:drawableLeft="@drawable/view_details_01_48"-->
+            <!--android:paddingBottom="40dp"-->
+            <!--android:paddingTop="30dp"-->
+            <!--android:drawableTop="@drawable/a1"-->
+            <!--android:drawableBottom="@drawable/a1"-->
+            <Button
+
+                android:id="@+id/p1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="#9eaff7"
+                android:drawableLeft="@drawable/a1"
+                android:drawablePadding="0dp"
+                android:gravity="center"
+                android:onClick="p1"
+                android:text="เพิ่ม คนงาน" />
+
+            <Button
+                android:id="@+id/p2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="#d6c7f991"
+                android:drawableLeft="@drawable/a4"
+                android:drawablePadding="0dp"
+                android:onClick="p2"
+                android:text="ทำงาน/เบิกเงิน" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/p4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="#d691f9e4"
+                android:drawablePadding="0dp"
+                android:drawableTop="@drawable/a3"
+                android:onClick="p4"
+                android:text="เพิ่ม งาน" />
+            <!--android:layout_centerHorizontal="true"-->
+            <Button
+                android:id="@+id/p5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="#d6f9ee91"
+                android:drawablePadding="0dp"
+                android:drawableTop="@drawable/a2"
+                android:onClick="p5"
+                android:text="รายงาน" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?><!--<android.support.v7.widget.CardView--><!--xmlns:card_view="http://schemas.android.com/apk/res-auto"--><!--xmlns:android="http://schemas.android.com/apk/res/android"--><!--android:id="@+id/cardView"--><!--android:layout_gravity="center"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:padding="5dp"--><!--card_view:cardUseCompatPadding="true"--><!--card_view:cardCornerRadius="4dp"--><!--card_view:cardElevation="4dp"--><!--card_view:contentPadding="5dp">-->
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    card_view:cardCornerRadius="1dp"
+    card_view:cardElevation="1dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:contentPadding="3dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+
+        android:orientation="horizontal">
+        <!--android:gravity="center_vertical"-->
+        <ImageView
+            android:id="@+id/name_ListView_Image"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_margin="5dp"
+            android:src="@drawable/user48" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <!--ส่วนชื่อ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ชื่อ : "
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/name_ListView_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="เล่น"
+                        android:textColor="@color/lv2"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ตำแหน่ง :"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/name_ListView_Position"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="ตำแหน่ง"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--วันทำงาน -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ทำงาน : "
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/lv_Workoff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="วัน"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="เบิก : "
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/lv_Withdraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="เงิน"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="เหลือ : "
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/lv_funds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="บาท"
+                    android:textColor="@color/lv1"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

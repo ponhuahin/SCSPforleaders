@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">SCSP forleaders</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="Inicio">Inicio</string>
+    <string name="inicio">inicio</string>
+    <string name="store">store</string>
+    <string name="business">business</string>
+    <string name="restaurants">restaurants</string>
+
+    <string name="signUp">สมัครสมาชิค</string>
+    <string name="haveSpace">กรุณากรอก ทุกช่องคะ</string>
+    <string name="userFalse">ไม่มี User นี่ใน ฐานข้อมูล</string>
+    <string name="passFalse">Password  ผิด กรุณา ลองใหม่</string>
+
+    <string name="item_1">เพิ่มคนงาน</string>
+    <string name="item_2">ทำงาน</string>
+    <string name="item_3">บริษัท</string>
+    <string name="item_4">เบ็ดเตล็ด</string>
+</resources>

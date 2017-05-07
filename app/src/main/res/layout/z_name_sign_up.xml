@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/Image_Emp"
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                android:background="#232323"
+                android:padding="10dp"
+                android:src="@drawable/user255" />
+            <!--app:srcCompat="@drawable-->
+            <!--         กรอบ    เริ่ม     -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="#1effffff"
+                android:orientation="vertical"
+                android:padding="15dp">
+                <!--       ตำแหน่ง เงินเดือน  เริ่ม       -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/fieldshape"
+                    android:orientation="horizontal">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/Position_Emp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="25dp"
+                            android:drawableLeft="@drawable/constructor16"
+                            android:drawablePadding="10dp"
+                            android:hint="ตำแหน่ง :"
+                            android:textSize="15dp" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2">
+
+                        <EditText
+                            android:inputType="number"
+                            android:id="@+id/Salary_Emp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/coins_money_stack16"
+                            android:drawablePadding="10dp"
+                            android:hint="เงินเดือน :"
+                            android:textSize="15dp" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+                <!--       ตำแหน่ง เงินเดือน  จบ       -->
+                <!--       ชื่อ อายุ เพส  เริ่ม       -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/fieldshape"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/Idcard_Emp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/id_card16"
+                            android:drawablePadding="10dp"
+                            android:hint="รหัสบัตรประชาชน :"
+                            android:inputType="number"
+                            android:maxLength="13"
+                            android:textSize="15dp" />
+                        <!--app:srcCompat="@drawable/user48"-->
+                    </android.support.design.widget.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/Name_Emp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:layout_weight="1"
+                                android:drawableLeft="@drawable/user16"
+                                android:drawablePadding="10dp"
+                                android:hint="ชื่อ นามสกุล :"
+                                android:textSize="15dp" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
+
+                            <EditText
+                                android:id="@+id/Nickname_Emp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:drawableLeft="@drawable/user16"
+                                android:drawablePadding="10dp"
+                                android:hint="ชื่อเล่น :"
+                                android:textSize="15dp" />
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginTop="9dp"
+                            android:src="@drawable/gender_symbols16" />
+
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Sex_Emp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:onClick="RadioButtonClicked"
+                                android:id="@+id/Sex_Emp1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:text="หญิง"
+                                android:textSize="15dp" />
+
+                            <RadioButton
+                                android:onClick="RadioButtonClicked"
+                                android:id="@+id/Sex_Emp2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="4"
+                                android:checked="false"
+                                android:text="ชาย"
+                                android:textSize="15dp" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/DateBirth_Emp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginRight="25dp"
+                                android:layout_weight="1"
+                                android:drawableLeft="@drawable/calendar_interface_symbol16"
+                                android:drawablePadding="10dp"
+                                android:hint="วัน เดือน ปีเกิด :"
+                                android:inputType="date"
+                                android:textSize="15dp" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/Age_Emp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:drawableLeft="@drawable/calendar_daily_page_on_day_3116"
+                                android:drawablePadding="10dp"
+                                android:hint="อายุ :"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:textSize="15dp" />
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <!--       ชื่อ อายุ เพส  จบ          -->
+                <!--       ที่อยุ่ เบอร์โทร  เริ่ม       -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/fieldshape"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/Address_Emp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/placeholder16"
+                            android:drawablePadding="10dp"
+                            android:hint="ที่อยู่ :"
+                            android:textSize="15dp" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/Tel_Emp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/smartphone_iphone16"
+                            android:drawablePadding="10dp"
+                            android:hint="เบอร์โทร :"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:textSize="15dp" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+                <!--       ที่อยุ่ เบอร์โทร  จบ       -->
+                <!--       ไลน์ เฟส อีเมล  เริ่ม       -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/fieldshape"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/Line_Emp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/line_logo16"
+                            android:drawablePadding="10dp"
+                            android:hint="ไลน์ :"
+                            android:textSize="15dp" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/Facebook_Emp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/facebook_social_network_logo16"
+                            android:drawablePadding="10dp"
+                            android:hint="Facebook :"
+                            android:textSize="15dp" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/Email_Emp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/mail16"
+                            android:drawablePadding="10dp"
+                            android:hint="อีเมล :"
+                            android:textSize="15dp" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+                <!--       ไลน์ เฟส อีเมล  เริ่ม       -->
+            </LinearLayout>
+            <!--         กรอบ    จบ     -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_weight="1"
+                    android:id="@+id/Name_Reg_But_Save"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/po0"
+                    android:text="บันทึก"
+                    android:textColor="@color/pp"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:onClick="sss1"
+                    android:id="@+id/Name_Reg_But"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ยกเลิก" />
+
+                <!--<Button-->
+                    <!--android:id="@+id/Name_cancel_Z"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="ยกเลิก" />-->
+
+                <Button
+                    android:onClick="sssSHOW"
+                    android:id="@+id/Name_SHOW"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ดู" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
