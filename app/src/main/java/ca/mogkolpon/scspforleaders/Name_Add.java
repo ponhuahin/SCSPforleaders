@@ -252,9 +252,9 @@ public class Name_Add extends AppCompatActivity {
         Name_Save = (Button) findViewById(R.id.Name_Save);                       // ปุ่ม บันทึก
     } // จบ bindWidget
 
-    public void onBackPressed(){
-        Intent intent = new Intent(Name_Add.this, SCSP.class);
-        startActivity(intent);
-        finish();
-    }
+//    public void onBackPressed(){
+//        Intent intent = new Intent(Name_Add.this, SCSP.class);
+//        startActivity(intent);
+//        finish();
+//    }
 } // จบ class Name_Add

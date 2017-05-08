@@ -67,9 +67,9 @@ public class Job_Show extends AppCompatActivity {
         Intent intent=new Intent(Job_Show.this,Job_Add.class);
         startActivity(intent);
     }
-    public void onBackPressed(){
-        Intent intent = new Intent(Job_Show.this, SCSP.class);
-        startActivity(intent);
-        finish();
-    }
+//    public void onBackPressed(){
+//        Intent intent = new Intent(Job_Show.this, SCSP.class);
+//        startActivity(intent);
+//        finish();
+//    }
 } //  จบ class Job_Show

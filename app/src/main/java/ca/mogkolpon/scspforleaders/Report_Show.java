@@ -25,9 +25,9 @@ public class Report_Show extends AppCompatActivity {
         workListView.setAdapter(adapter);
         report_listDAO.close();
     }
-    public void onBackPressed(){
-        Intent intent = new Intent(Report_Show.this, SCSP.class);
-        startActivity(intent);
-        finish();
-    }
+//    public void onBackPressed(){
+//        Intent intent = new Intent(Report_Show.this, SCSP.class);
+//        startActivity(intent);
+//        finish();
+//    }
 }

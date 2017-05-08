@@ -156,9 +156,9 @@ public class Work_NAME_JOB extends AppCompatActivity {
 //        passEditText= (EditText)findViewById(R.id.admin_Pass);
     } // จบ bindWidget
 
-    public void onBackPressed(){
-        Intent intent = new Intent(Work_NAME_JOB.this, SCSP.class);
-        startActivity(intent);
-        finish();
-    }
+//    public void onBackPressed(){
+//        Intent intent = new Intent(Work_NAME_JOB.this, SCSP.class);
+//        startActivity(intent);
+//        finish();
+//    }
 } // จบ class Work_NAME_JOB
