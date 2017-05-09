@@ -34,9 +34,9 @@ public class Report_ListDAO {
 //                "FROM Workoff_db " +
 //                "GROUP BY ID_Job_Wor " +
 //                "Having COUNT(ID_Job_Wor) ", null);
-        Cursor cursor = database.rawQuery("SELECT ID_Job_Wor, SUM(Workoff_Wor), SUM(Withdraw_Wor) " +
+        Cursor cursor = database.rawQuery("SELECT ID_Job_Wor, ID_Emp_Wor , SUM(Workoff_Wor), SUM(Withdraw_Wor) " +
                 "FROM Workoff_db " +
-                "GROUP BY ID_Job_Wor ", null);
+                "GROUP BY ID_Emp_Wor ", null);
 
 //        SELECT CountryCode,SUM(Budget) AS SumBudget FROM customer GROUP BY CountryCode
 
@@ -66,8 +66,8 @@ public class Report_ListDAO {
 //            work_toList1.setDateApp_Wor(cursor.getString(7));           //วันที่บันทึก
 
             work_toList1.setID_Job_Wor(cursor.getString(0));
-            work_toList1.setWorkoff_Wor(cursor.getString(1));
-            work_toList1.setWithdraw_Wor(cursor.getString(2));
+            work_toList1.setWorkoff_Wor(cursor.getString(2));
+            work_toList1.setWithdraw_Wor(cursor.getString(3));
 //            work_toList1.setDateApp_Wor(cursor.getString(3));
             workToListst.add(work_toList1);
             cursor.moveToNext();

@@ -273,6 +273,7 @@
                         android:textStyle="bold" />
 
                     <Button
+                        android:background="@color/po4"
                         android:id="@+id/job_But_cancel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

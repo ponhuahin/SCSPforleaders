@@ -19,13 +19,13 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:text="รหัส "
-            android:textSize="16sp" />
+            android:textSize="12sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_weight="1"
+        android:layout_weight="1.2"
         android:background="#ecebeb"
         android:gravity="center_vertical">
 

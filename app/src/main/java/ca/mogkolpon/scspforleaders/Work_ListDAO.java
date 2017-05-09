@@ -1,8 +1,11 @@
 package ca.mogkolpon.scspforleaders;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -10,11 +13,13 @@ import java.util.ArrayList;
  * Created by User-Gamer on 3/24/2017.
  */
 
-public class Work_ListDAO {
+public class Work_ListDAO extends AppCompatActivity {
+    String B1,B2,B3,B4,B5,W_1,W_2;
     String a1 = "1545464564654";
-    String a2 = "3";
+    String a2 = "445646";
     private SQLiteDatabase database;
     private MyData myData;
+
     public Work_ListDAO(Context context) {
         myData = new MyData(context);
     }
@@ -30,7 +35,23 @@ public class Work_ListDAO {
     public ArrayList<Work_ToList> getAllListDAO() {
         ArrayList<Work_ToList> workToListst = new ArrayList<Work_ToList>();
 //        Cursor cursor = database.rawQuery("SELECT * FROM Workoff_db;", null);
-
+//        try {
+//            //  ดึงค่า มา แสดง {
+//            final Name_ToList name_toList = (Name_ToList) getIntent().getSerializableExtra("eait");
+//
+//            B1 = name_toList.getName_Emp();
+//            B2 = name_toList.getNickname_Emp();
+//            B3 = name_toList.getIdcard_Emp();
+//            B4 = name_toList.getPosition_Emp();
+//            B5 = name_toList.getSalary_Emp();   //เงินเดือน
+//
+//            // จบ ดึงค่า มา แสดง }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        Cursor cursor = database.rawQuery("SELECT * FROM Workoff_db WHERE ID_Emp_Wor='"
+//                + B3 +
+//                "' Order By DateApp_Wor DESC;", null);
         Cursor cursor = database.rawQuery("SELECT * FROM Workoff_db Order By DateApp_Wor DESC;", null);
 
 //        Cursor cursor = database.rawQuery("SELECT * FROM Workoff_db WHERE ID_Emp_Wor='1545464564654';", null);
@@ -68,5 +89,6 @@ public class Work_ListDAO {
         cursor.close();
         return workToListst;
     } // จบ  ArrayList
+
 } // จบ class Name_ListDAO
 

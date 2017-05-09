@@ -1,6 +1,7 @@
 package ca.mogkolpon.scspforleaders;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -11,8 +12,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -30,7 +33,7 @@ public class Work_NAME_JOB extends AppCompatActivity {
     ListView workListView, workListView2;
     private String MoneyString;
     private String W_1,name1,W_2, workListView22;
-
+    private String r11,r22,r33;
 
     private SQLiteDatabase database;
     private MyData myData;
@@ -102,8 +105,6 @@ public class Work_NAME_JOB extends AppCompatActivity {
 
 //        / เรียกฐานข้อมูล มาใช้แล้ว รวมรายได้ ทั้งหมด
 
-
-
 //        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
 //        Cursor cursor22 = sqLiteDatabase.rawQuery("SELECT SUM(Withdraw_Wor),SUM(Workoff_Wor) FROM Workoff_db WHERE ID_Emp_Wor= '"+ W_2 +"'", null);
 //        cursor22.moveToFirst();
@@ -131,6 +132,7 @@ public class Work_NAME_JOB extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     } // จบ onCreate
 
     protected void onResume() {
@@ -143,7 +145,21 @@ public class Work_NAME_JOB extends AppCompatActivity {
         workListView.setAdapter(adapter);
         work_listDAO.close();
 
-
+//        try {
+////        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
+////            Cursor cursor5 = sqLiteDatabase.rawQuery("SELECT * FROM Workoff_db WHERE ID_Emp_Wor='"
+////                    + W_2 +
+////                    "' Order By DateApp_Wor DESC;", null);
+////            Cursor cursor5 = sqLiteDatabase.rawQuery("SELECT SUM( b.Workoff_Wor),SUM( b.Withdraw_Wor),SUM((( b.Workoff_Wor)* a.Salary_Emp )- (b.Withdraw_Wor))\n" +
+////                    "FROM Employee_db a, Workoff_db b\n" +
+////                    "WHERE a.Idcard_Emp = b.ID_Emp_Wor", null);
+////            cursor5.moveToFirst();
+//            ListView workListView2 = (ListView) findViewById(R.id.work_ListView);
+////            MyData todoAdapter = new MyData(this, todoCursor);
+//            workListView2.setAdapter((ListAdapter) todoCursor);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
     private void bindWidget() {
@@ -161,4 +177,5 @@ public class Work_NAME_JOB extends AppCompatActivity {
 //        startActivity(intent);
 //        finish();
 //    }
+
 } // จบ class Work_NAME_JOB

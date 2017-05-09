@@ -36,31 +36,35 @@ public class Job_Show extends AppCompatActivity {
         jobListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
             public void onItemClick(AdapterView<?> patent, View view, int position, long id) {
                 Toast.makeText(getApplicationContext(), String.valueOf(adapter.getItemId(position)), Toast.LENGTH_SHORT).show();
+                Intent editIntent = new Intent(getApplicationContext(), Job_Edit.class);
+                editIntent.putExtra("editTodoList",adapter.getItem(position));
+                startActivity(editIntent);
+//                dialog.cancel();
 
             }
         });
 // กดค้าง
-        jobListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
-            public boolean onItemLongClick(AdapterView<?> patent, View view, final int position, long id) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(Job_Show.this);
-
-                builder.setPositiveButton("ลบ ไม่ได้", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                });
-                builder.setNegativeButton("แก้ไข/ลบ", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent editIntent = new Intent(getApplicationContext(), Job_Edit.class);
-                        editIntent.putExtra("editTodoList",adapter.getItem(position));
-                        startActivity(editIntent);
-                        dialog.cancel();
-                    }
-                });
-                builder.show();
-                return true;
-            }
-        });
+//        jobListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
+//            public boolean onItemLongClick(AdapterView<?> patent, View view, final int position, long id) {
+//                AlertDialog.Builder builder = new AlertDialog.Builder(Job_Show.this);
+//
+////                builder.setPositiveButton("ลบ ไม่ได้", new DialogInterface.OnClickListener() {
+////                    public void onClick(DialogInterface dialog, int which) {
+////
+////                    }
+////                });
+//                builder.setNegativeButton("แก้ไข/ลบ", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        Intent editIntent = new Intent(getApplicationContext(), Job_Edit.class);
+//                        editIntent.putExtra("editTodoList",adapter.getItem(position));
+//                        startActivity(editIntent);
+//                        dialog.cancel();
+//                    }
+//                });
+//                builder.show();
+//                return true;
+//            }
+//        });
     }
     public void job_add(View view){
         Button job_add = (Button)findViewById(R.id.job_add);

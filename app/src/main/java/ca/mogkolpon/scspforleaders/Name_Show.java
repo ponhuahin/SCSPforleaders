@@ -19,18 +19,18 @@ public class Name_Show extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.name_show);
 
-        nameListView =(ListView)findViewById(R.id.name_ListView);
+        nameListView = (ListView) findViewById(R.id.name_ListView);
 
 
     } // จบ onCreate
 
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
         Name_ListDAO name_listDAO1 = new Name_ListDAO(getApplicationContext());
         name_listDAO1.open();
-        ArrayList<Name_ToList>myList = name_listDAO1.getAllListDAO();
+        ArrayList<Name_ToList> myList = name_listDAO1.getAllListDAO();
 
-        final ListView_Name adapter = new ListView_Name(this,myList);
+        final ListView_Name adapter = new ListView_Name(this, myList);
         nameListView.setAdapter(adapter);
         name_listDAO1.close();
 
@@ -42,6 +42,14 @@ public class Name_Show extends AppCompatActivity {
                 Intent eaitIntent = new Intent(getApplicationContext(), Work_NAME_JOB.class);
                 eaitIntent.putExtra("eait", adapter.getItem(position));
                 startActivity(eaitIntent);
+                // ทดลองเพิ่ม
+                try {
+                    Intent eaitIntent1 = new Intent(getApplicationContext(), Work_ListDAO.class);
+                    eaitIntent1.putExtra("eait", adapter.getItem(position));
+                    startActivity(eaitIntent1);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });//  จบ กด ปกติ
 
