@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
@@ -17,13 +18,14 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Work_NAME_JOB extends AppCompatActivity {
-    private EditText Workoff_Wor, Withdraw_Wor, W_Idcard_Wor,W_Name_Wor;
+    private EditText Workoff_Wor, Withdraw_Wor, W_Idcard_Wor, W_Name_Wor;
     private Button button;
     private String Workoff_WorString, Withdraw_WorString, W_Idcard, s2, W_Name, s4, s5, s6;
     private TextView w_Name, d2, d3, d4, d5, d6;
@@ -32,11 +34,18 @@ public class Work_NAME_JOB extends AppCompatActivity {
     private Button editBtn, editBtn1;
     ListView workListView, workListView2;
     private String MoneyString;
-    private String W_1,name1,W_2, workListView22;
-    private String r11,r22,r33;
+    private String W_1, name1, W_2, workListView22;
+    private String r11, r22, r33;
 
     private SQLiteDatabase database;
     private MyData myData;
+
+    private ArrayList<String> stafid = new ArrayList<String>();
+    private ArrayList<String> nama = new ArrayList<String>();
+    private ArrayList<String> jbt = new ArrayList<String>();
+
+    private ListView userList;
+    private AlertDialog.Builder build;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +54,8 @@ public class Work_NAME_JOB extends AppCompatActivity {
         bindWidget();
 
         workListView = (ListView) findViewById(R.id.work_ListView);
+        userList = (ListView) findViewById(R.id.work_ListView2);
+        myData = new MyData(this);
 
         //  ดึงค่า มา แสดง {
         final Name_ToList name_toList = (Name_ToList) getIntent().getSerializableExtra("eait");
@@ -59,7 +70,7 @@ public class Work_NAME_JOB extends AppCompatActivity {
         B4.setText(name_toList.getPosition_Emp());
         B5.setText(name_toList.getSalary_Emp());   //เงินเดือน
         W_1 = name_toList.getSalary_Emp();
-        W_2= name_toList.getIdcard_Emp();
+        W_2 = name_toList.getIdcard_Emp();
         // จบ ดึงค่า มา แสดง }
 
         // ปุ้ม เพิ่ม วันทำงาน   //
@@ -79,7 +90,7 @@ public class Work_NAME_JOB extends AppCompatActivity {
                 Workoff_WorString = Workoff_Wor.getText().toString().trim();
                 Withdraw_WorString = Withdraw_Wor.getText().toString().trim();
                 W_Idcard = W_Idcard_Wor.getText().toString().trim();
-                W_Name= W_Name_Wor.getText().toString().trim();
+                W_Name = W_Name_Wor.getText().toString().trim();
 
                 MyWork myWork = new MyWork(Work_NAME_JOB.this);
                 myWork.addNewValue(Workoff_WorString,   //ทำงาน / หยุด
@@ -111,22 +122,22 @@ public class Work_NAME_JOB extends AppCompatActivity {
 //        workListView2 = (ListView) findViewById(R.id.work_ListView2);
 //        workListView2.setAdapter(adapter);
         try {
-        // เริ่ม
-        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT SUM(Withdraw_Wor),SUM(Workoff_Wor) FROM Workoff_db WHERE ID_Emp_Wor= '"+ W_2 +"'", null);
-        cursor.moveToFirst();
-        TextView name_Text1 = (TextView) findViewById(R.id.name_Text);   //เชื่อมต่อTextView หน้าออกแบบกับ หน้าโค้ด
-        TextView name_Text2 = (TextView) findViewById(R.id.name_Text2);  //เชื่อมต่อTextView หน้าออกแบบกับ หน้าโค้ด
-        name_Text1.setText(MoneyString = cursor.getString(0));  //เชื่อมต่อTextView หน้าออกแบบกับ หน้าโค้ด
-        name_Text2.setText(s2 = cursor.getString(1));
+            // เริ่ม
+            SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
+            Cursor cursor = sqLiteDatabase.rawQuery("SELECT SUM(Withdraw_Wor),SUM(Workoff_Wor) FROM Workoff_db WHERE ID_Emp_Wor= '" + W_2 + "'", null);
+            cursor.moveToFirst();
+            TextView name_Text1 = (TextView) findViewById(R.id.name_Text);   //เชื่อมต่อTextView หน้าออกแบบกับ หน้าโค้ด
+            TextView name_Text2 = (TextView) findViewById(R.id.name_Text2);  //เชื่อมต่อTextView หน้าออกแบบกับ หน้าโค้ด
+            name_Text1.setText(MoneyString = cursor.getString(0));  //เชื่อมต่อTextView หน้าออกแบบกับ หน้าโค้ด
+            name_Text2.setText(s2 = cursor.getString(1));
 
-        TextView name_Text3 = (TextView) findViewById(R.id.name_Text3);
-        int W_name1 = Integer.parseInt(s2);
-        int W_name2 = Integer.parseInt(W_1);
-        int ss=Integer.parseInt(String.valueOf(W_name2 * W_name1));
-        int ss1=Integer.parseInt(MoneyString);
+            TextView name_Text3 = (TextView) findViewById(R.id.name_Text3);
+            int W_name1 = Integer.parseInt(s2);
+            int W_name2 = Integer.parseInt(W_1);
+            int ss = Integer.parseInt(String.valueOf(W_name2 * W_name1));
+            int ss1 = Integer.parseInt(MoneyString);
 
-        name_Text3.setText(name1 = String.valueOf(ss - ss1));
+            name_Text3.setText(name1 = String.valueOf(ss - ss1));
 
 //        / เรียกฐานข้อมูล มาใช้แล้ว รวมรายได้ ทั้งหมด จบ
         } catch (Exception e) {
@@ -137,26 +148,51 @@ public class Work_NAME_JOB extends AppCompatActivity {
 
     protected void onResume() {
         super.onResume();
-        Work_ListDAO work_listDAO = new Work_ListDAO(getApplicationContext());
-        work_listDAO.open();
-        ArrayList<Work_ToList> myList = work_listDAO.getAllListDAO();
+        displayData();
 
-        final ListView_Work adapter = new ListView_Work(this, myList);
-        workListView.setAdapter(adapter);
-        work_listDAO.close();
+//        Work_ListDAO work_listDAO = new Work_ListDAO(getApplicationContext());
+//        work_listDAO.open();
+//        ArrayList<Work_ToList> myList = work_listDAO.getAllListDAO();
+//
+//        final ListView_Work adapter = new ListView_Work(this, myList);
+//        workListView.setAdapter(adapter);
+//        work_listDAO.close();
+        //กด ค้าง
+
+//        workListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
+//            public boolean onItemLongClick(AdapterView<?> patent, View view, final int position, long id) {
+//                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Work_NAME_JOB.this);
+////                builder.setPositiveButton("ลบ ไม่ได้", new DialogInterface.OnClickListener() {
+////                    public void onClick(DialogInterface dialog, int which) {
+////
+////                    }
+////                });
+//                builder.setNegativeButton("แก้ไข", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//
+//                        Intent eaitIntent = new Intent(getApplicationContext(), Name_Eait.class);
+//                        eaitIntent.putExtra("eait", adapter.getItem(position));
+//                        startActivity(eaitIntent);
+//                        dialog.cancel();
+//                    }
+//                });
+//                builder.show();
+//                return true;
+//            }
+//        }); // จบ กด ค้าง
 
 //        try {
-////        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
-////            Cursor cursor5 = sqLiteDatabase.rawQuery("SELECT * FROM Workoff_db WHERE ID_Emp_Wor='"
-////                    + W_2 +
-////                    "' Order By DateApp_Wor DESC;", null);
+//        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
+//            Cursor cursor5 = sqLiteDatabase.rawQuery("SELECT * FROM Workoff_db WHERE ID_Emp_Wor='"
+//                    + W_2 +
+//                    "' Order By DateApp_Wor DESC;", null);
 ////            Cursor cursor5 = sqLiteDatabase.rawQuery("SELECT SUM( b.Workoff_Wor),SUM( b.Withdraw_Wor),SUM((( b.Workoff_Wor)* a.Salary_Emp )- (b.Withdraw_Wor))\n" +
 ////                    "FROM Employee_db a, Workoff_db b\n" +
 ////                    "WHERE a.Idcard_Emp = b.ID_Emp_Wor", null);
-////            cursor5.moveToFirst();
-//            ListView workListView2 = (ListView) findViewById(R.id.work_ListView);
-////            MyData todoAdapter = new MyData(this, todoCursor);
-//            workListView2.setAdapter((ListAdapter) todoCursor);
+//            cursor5.moveToFirst();
+//            ListView workListView2 = (ListView) findViewById(R.id.work_ListView2);
+////            workListView2.setAdapter((ListAdapter) todoCursor);
+////            workListView2.setText(MoneyString = cursor5.getString(0));
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
@@ -172,10 +208,45 @@ public class Work_NAME_JOB extends AppCompatActivity {
 //        passEditText= (EditText)findViewById(R.id.admin_Pass);
     } // จบ bindWidget
 
-//    public void onBackPressed(){
+    //    public void onBackPressed(){
 //        Intent intent = new Intent(Work_NAME_JOB.this, SCSP.class);
 //        startActivity(intent);
 //        finish();
 //    }
+
+    private void displayData() {
+        try {
+        database = myData.getWritableDatabase();
+        //the SQL command to fetched all records from the table
+//            Cursor mCursor = database.rawQuery("SELECT * FROM  Workoff_db ", null);
+    Cursor mCursor = database.rawQuery("SELECT * FROM  Workoff_db WHERE ID_Emp_Wor= '" + W_2 + "'", null);
+//        Cursor mCursor = database.rawQuery("SELECT SUM( b.Workoff_Wor),SUM( b.Withdraw_Wor),SUM((( b.Workoff_Wor)* a.Salary_Emp )- (b.Withdraw_Wor))\n" +
+//                "FROM Employee_db a, Workoff_db b\n" +
+//                "WHERE a.Idcard_Emp = b.ID_Emp_Wor", null);
+//    reset variables
+        stafid.clear();
+        nama.clear();
+        jbt.clear();
+//
+//    //fetch each record
+        if (mCursor.moveToFirst()) {
+            do {
+                //get data from field
+                stafid.add(mCursor.getString(mCursor.getColumnIndex(MyData.Withdraw_Wor)));
+                nama.add(mCursor.getString(mCursor.getColumnIndex(MyData.Workoff_Wor)));
+                jbt.add(mCursor.getString(mCursor.getColumnIndex(MyData.DateApp_Wor)));
+
+            } while (mCursor.moveToNext());
+            //do above till data exhausted
+        }
+
+        //display to screen
+        DisplayAdapter disadpt = new DisplayAdapter(Work_NAME_JOB.this, stafid, nama, jbt);
+        userList.setAdapter(disadpt);
+        mCursor.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//end displayData
 
 } // จบ class Work_NAME_JOB

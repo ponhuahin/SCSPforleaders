@@ -202,7 +202,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number"
-                    android:text="0"
+                    android:text=" "
                     android:textSize="15dp" />
 
                 <TextView
@@ -233,7 +233,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number"
-                    android:text="0"
+                    android:text=" "
                     android:textSize="15dp" />
 
                 <TextView
@@ -329,11 +329,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
-                    <!--<ListView-->
-                    <!--android:id="@+id/work_ListView2"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent">-->
-                    <!--</ListView>-->
+                    <ListView
+                    android:id="@+id/work_ListView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    </ListView>
                     <ListView
                         android:id="@+id/work_ListView"
                         android:layout_width="match_parent"
@@ -361,6 +361,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:textColor="#ffffff"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:gravity="center"
@@ -385,6 +386,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:textColor="#ffffff"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:gravity="center"

@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:gravity="center_vertical"> >
+
+    <!--<TextView-->
+        <!--android:id="@+id/txtstafid"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:textColor="#000" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/txtnama"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="2"-->
+        <!--android:textColor="#000" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/txtjbt"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="2"-->
+        <!--android:textColor="#000" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/txtstafid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="center|left"
+            android:text="เบิก "
+            android:textColor="@color/lv2"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#ecebeb"
+        android:gravity="center_vertical">
+        <TextView
+            android:textColor="#000000"
+            android:id="@+id/txtnama"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="ทำงาน "
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/txtjbt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="เวลา "
+            android:textSize="15dp" />
+    </LinearLayout>
+
+</LinearLayout>

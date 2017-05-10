@@ -19,6 +19,7 @@ public class Work_ListDAO extends AppCompatActivity {
     String a2 = "445646";
     private SQLiteDatabase database;
     private MyData myData;
+    private Work_NAME_JOB work_name_job;
 
     public Work_ListDAO(Context context) {
         myData = new MyData(context);
@@ -52,7 +53,7 @@ public class Work_ListDAO extends AppCompatActivity {
 //        Cursor cursor = database.rawQuery("SELECT * FROM Workoff_db WHERE ID_Emp_Wor='"
 //                + B3 +
 //                "' Order By DateApp_Wor DESC;", null);
-        Cursor cursor = database.rawQuery("SELECT * FROM Workoff_db Order By DateApp_Wor DESC;", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM Workoff_db Order By DateApp_Wor DESC;", null); //////////
 
 //        Cursor cursor = database.rawQuery("SELECT * FROM Workoff_db WHERE ID_Emp_Wor='1545464564654';", null);
 //        Cursor cursor = database.rawQuery("SELECT * FROM Workoff_db WHERE ID_Emp_Wor='"
