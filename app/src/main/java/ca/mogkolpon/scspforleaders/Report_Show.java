@@ -1,23 +1,33 @@
 package ca.mogkolpon.scspforleaders;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class Report_Show extends AppCompatActivity {
     ListView workListView;
-    private String r11,r22,r33;
+    private String r11;
+    private String r22;
+    private String r33;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.report_show);
         workListView = (ListView) findViewById(R.id.work_ListView1);
+
+
     }
 
 
@@ -47,10 +57,33 @@ public class Report_Show extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        //กด ค้าง
+        workListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
+            public boolean onItemLongClick(AdapterView<?> patent, View view, final int position, long id) {
+                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Report_Show.this);
+                builder.setIcon(R.drawable.garbage_full_48);
+                builder.setTitle("ลบข้อมูลการทำงาน/เบิก");
+                builder.setMessage("คุณต้องการลบข้อมูล การทำงาน/การเบิก ทั้งหมดนี้ใช่หรือไม่?");
+                builder.setPositiveButton("ลบทั้งหมด", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+//                        Toast.makeText(getApplicationContext(), String.valueOf(adapter.getItemId(position)), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), " ลบข้อมูลทั้งหมด เรียบร้อย  ",Toast.LENGTH_LONG).show();
+                        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
+                        Cursor cursor5 = sqLiteDatabase.rawQuery("DELETE FROM Workoff_db", null);
+                        cursor5.moveToFirst();
+                    }
+                });
+                builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+//                        Toast.makeText(getApplicationContext(), String.valueOf(adapter.getItemId(position)), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "ยกเลิก การลบแล้ว ",Toast.LENGTH_LONG).show();
+                    }
+                });
+                builder.show();
+                return true;
+            }
+        }); // จบ กด ค้าง
     }
-//    public void onBackPressed(){
-//        Intent intent = new Intent(Report_Show.this, SCSP.class);
-//        startActivity(intent);
-//        finish();
-//    }
+
 }

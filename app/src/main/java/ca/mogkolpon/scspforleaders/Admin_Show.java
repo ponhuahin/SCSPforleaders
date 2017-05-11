@@ -45,11 +45,11 @@ public class Admin_Show extends AppCompatActivity {
         adminListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
             public boolean onItemLongClick(AdapterView<?> patent, View view, final int position, long id) {
                 android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Admin_Show.this);
-                builder.setPositiveButton("ลบ ไม่ได้", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                });
+//                builder.setPositiveButton("ลบ ไม่ได้", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//
+//                    }
+//                });
                 builder.setNegativeButton("แก้ไข", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
 

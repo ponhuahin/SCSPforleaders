@@ -224,7 +224,7 @@ public class Name_Add extends AppCompatActivity {
                     Facebook_Emp.setText("");
                     Email_Emp.setText("");
 
-                    imageView.setImageResource(R.mipmap.ic_launcher);
+                    imageView.setImageResource(R.drawable.user255);
                 } // จบ else
             } // จบ onClick
         }); // จบ ปุ่ม Name_Save

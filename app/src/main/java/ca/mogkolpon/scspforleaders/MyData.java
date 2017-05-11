@@ -13,14 +13,15 @@ public class MyData extends SQLiteOpenHelper {
     static final String database_name = "SCSPforleaders.sqlite";  // สร้างฐานข้อมูล ชื่อ SCSPforleaders
     private static final int databasVersion = 1;
     Context myContext;
-
 //    static String DATABASE_NAME="fstmdirektori";
-//    public static final String TABLE_NAME="staflist";
+    public static final String TABLE_NAME="Workoff_db";
     //these are the lit of fields in the table
+public static final String ID_Wor="ID_Wor";
     public static final String Workoff_Wor="Workoff_Wor";
     public static final String Withdraw_Wor="Withdraw_Wor";
     public static final String ID_Emp_Wor="ID_Emp_Wor";
     public static final String DateApp_Wor="DateApp_Wor";
+
 
     private static final String tableCreateSQL1 = "CREATE TABLE admin_db (" +
             "ID_admin INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -72,8 +73,8 @@ public class MyData extends SQLiteOpenHelper {
             "DateApp_Job TEXT "+              //วันที่สมัคร        	          13
             ");";
 
-    private static final String tableCreateSQL4 = "CREATE TABLE Workoff_db ("+     //ตาราง ทำงาน
-            "ID_Wor INTEGER PRIMARY KEY AUTOINCREMENT, "+        //ID รัน AUTOINCREMENT
+    private static final String tableCreateSQL4 = "CREATE TABLE '" +TABLE_NAME+ "' ("+     //ตาราง ทำงาน
+            "'" +ID_Wor+ "'INTEGER PRIMARY KEY AUTOINCREMENT, "+        //ID รัน AUTOINCREMENT
             "'" +Workoff_Wor+ "'  TEXT, "+          //ทำงาน / หยุด
             "ID_Job_Wor TEXT, "+            //ID งาน
             "DateWork_Wor TEXT, "+         //เวลาทำงาน
@@ -82,7 +83,6 @@ public class MyData extends SQLiteOpenHelper {
             "'" +ID_Emp_Wor+ "' TEXT, "+         //ID พนักงาน
             "'" +DateApp_Wor+ "'   TEXT"+          //วันที่บันทึก
             ");";
-
     public MyData(Context context) {
         super(context, database_name, null, databasVersion);
         this.myContext = context;

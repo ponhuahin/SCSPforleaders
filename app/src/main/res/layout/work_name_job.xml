@@ -139,6 +139,7 @@
                     android:textSize="15dp" />
 
                 <TextView
+                    android:textColor="#000000"
                     android:id="@+id/W_Position"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -153,6 +154,7 @@
                     android:textSize="15dp" />
 
                 <TextView
+                    android:textColor="#000000"
                     android:id="@+id/W_Salary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -204,7 +206,7 @@
                     android:inputType="number"
                     android:text=" "
                     android:textSize="15dp" />
-
+                <!--android:inputType="number"-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -332,12 +334,12 @@
                     <ListView
                     android:id="@+id/work_ListView2"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="258dp">
                     </ListView>
-                    <ListView
-                        android:id="@+id/work_ListView"
-                        android:layout_width="match_parent"
-                        android:layout_height="246dp"></ListView>
+                    <!--<ListView-->
+                        <!--android:id="@+id/work_ListView"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="246dp"></ListView>-->
                 </LinearLayout>
             </ScrollView>
 
@@ -370,11 +372,13 @@
 
 
             <TextView
+                android:textSize="17dp"
+                android:textStyle="bold"
                 android:id="@+id/name_Text"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:gravity="center|top"
+                android:gravity="center"
                 android:text="ggg" />
         </LinearLayout>
 
@@ -394,11 +398,13 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:textStyle="bold"
+                android:textSize="17dp"
                 android:id="@+id/name_Text2"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:gravity="center|top"
+                android:gravity="center"
                 android:text="ggg" />
         </LinearLayout>
 

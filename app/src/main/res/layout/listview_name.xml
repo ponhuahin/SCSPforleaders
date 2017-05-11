@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="5dp"
-    card_view:cardCornerRadius="1dp"
-    card_view:cardElevation="1dp"
+    card_view:cardCornerRadius="2dp"
+    card_view:cardElevation="3dp"
     card_view:cardUseCompatPadding="true"
-    card_view:contentPadding="3dp">
+    card_view:contentPadding="5dp">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:orientation="horizontal"
-        android:background="#edebeb">
+        android:background="#b9b6b6"
+        android:orientation="horizontal">
         <!--android:gravity="center_vertical"-->
         <ImageView
             android:id="@+id/name_ListView_Image"
@@ -24,14 +24,14 @@
             android:src="@drawable/user48" />
 
         <LinearLayout
-            android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#ffffff"
             android:gravity="center"
-            android:orientation="vertical"
-            android:paddingLeft="5dp">
-
+            android:orientation="vertical">
+            <!--android:paddingLeft="5dp"-->
             <LinearLayout
+                android:paddingLeft="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -47,16 +47,17 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ชื่อ : "
-                        android:textSize="12sp" />
+                        android:text="ชื่อ : "/>
 
                     <TextView
                         android:id="@+id/name_ListView_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="เล่น"
+                        android:textColor="#000000"
                         android:textSize="15sp" />
                 </LinearLayout>
 
@@ -69,95 +70,100 @@
                     android:orientation="horizontal">
 
                     <!--<TextView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:text="ชื่อเล่น: "-->
-                        <!--android:textSize="12sp" />-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="ชื่อเล่น: "-->
+                    <!--android:textSize="12sp" />-->
                     <TextView
-                        android:layout_marginRight="10dp"
-                        android:textColor="@color/lv2"
+                        android:textStyle="bold"
                         android:id="@+id/Nickname_Emp_L"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
                         android:text="ชื่อเล่น "
+                        android:textColor="@color/lv2"
                         android:textSize="18sp" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:background="#f9eeee"
+                android:paddingLeft="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_weight="1"
+                android:background="#f9ddb9"
                 android:gravity="center"
                 android:orientation="horizontal">
-
+                <!--f9eeee-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
                     android:gravity="center|left"
                     android:orientation="horizontal">
-
+                    <!--android:layout_gravity="bottom"-->
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
                         android:text="อายุ: "
-                        android:textSize="12sp" />
+                         />
+                    <!--&lt;!&ndash;android:textColor="#000000"-->
+                    <!--android:textSize="12sp" &ndash;&gt;-->
 
                     <TextView
                         android:id="@+id/Age_Emp_L"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
                         android:text=" "
-                        android:textSize="15sp" />
+                        android:textColor="#000000" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center|left"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="ตำแหน่ง: "
-                        android:textSize="12sp" />
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
+                        android:text="ตำแหน่ง: "/>
 
                     <TextView
                         android:id="@+id/name_ListView_Position"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
                         android:text=" "
-                        android:textSize="15sp" />
+                        android:textColor="#000000" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginLeft="20dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.4"
                     android:gravity="center|left"
                     android:orientation="horizontal">
+                    <!--android:layout_gravity="bottom"-->
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="เงิน: "
-                        android:textSize="12sp" />
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
+                        android:text="เงิน: "/>
 
                     <TextView
                         android:id="@+id/Salary_Emp_L"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
                         android:text=" "
-                        android:textSize="15sp" />
+                        android:textColor="#000000" />
                 </LinearLayout>
             </LinearLayout>
             <!--วันทำงาน -->

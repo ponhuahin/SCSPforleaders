@@ -19,17 +19,19 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:text="รหัส "
-            android:textSize="12sp" />
+            android:textSize="17sp" />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_weight="1.2"
+        android:layout_weight="1.4"
         android:background="#ecebeb"
         android:gravity="center_vertical">
 
         <TextView
+            android:textColor="#000000"
             android:id="@+id/work_Username"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -41,7 +43,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_weight="1"
+        android:layout_weight="1.2"
         android:gravity="center_vertical">
 
         <TextView

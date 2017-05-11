@@ -2,6 +2,7 @@ package ca.mogkolpon.scspforleaders;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -13,7 +14,8 @@ import java.util.ArrayList;
 
 public class Name_Show extends AppCompatActivity {
     ListView nameListView;
-
+    private SQLiteDatabase database;
+    private MyData myData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +40,7 @@ public class Name_Show extends AppCompatActivity {
         nameListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), String.valueOf(adapter.getItemId(position)), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), String.valueOf(adapter.getItemId(position)), Toast.LENGTH_SHORT).show();
                 Intent eaitIntent = new Intent(getApplicationContext(), Work_NAME_JOB.class);
                 eaitIntent.putExtra("eait", adapter.getItem(position));
                 startActivity(eaitIntent);
@@ -59,7 +61,13 @@ public class Name_Show extends AppCompatActivity {
                 android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Name_Show.this);
 //                builder.setPositiveButton("ลบ ไม่ได้", new DialogInterface.OnClickListener() {
 //                    public void onClick(DialogInterface dialog, int which) {
-//
+//                        try {
+//                            database.delete(MyData.TABLE_NAME,MyData.ID_Wor + "=" + ID_Wor.get(arg2), null);
+//                            Toast.makeText( getApplicationContext(), jbt.get(arg2) + " ลบข้อมูลเรียบร้อย ", Toast.LENGTH_SHORT).show();
+//                            dialog.cancel();
+//                        } catch (Exception e) {
+//                            e.printStackTrace();
+//                        }
 //                    }
 //                });
                 builder.setNegativeButton("แก้ไข", new DialogInterface.OnClickListener() {

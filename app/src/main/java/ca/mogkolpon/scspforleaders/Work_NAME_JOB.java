@@ -26,16 +26,16 @@ import java.util.Calendar;
 
 public class Work_NAME_JOB extends AppCompatActivity {
     private EditText Workoff_Wor, Withdraw_Wor, W_Idcard_Wor, W_Name_Wor;
-    private Button button;
+//    private Button button;
     private String Workoff_WorString, Withdraw_WorString, W_Idcard, s2, W_Name, s4, s5, s6;
-    private TextView w_Name, d2, d3, d4, d5, d6;
+//    private TextView w_Name, d2, d3, d4, d5, d6;
     String Sex_Emp0 = "ชาย";
-    DatePickerDialog datePickerDialog;
+//    DatePickerDialog datePickerDialog;
     private Button editBtn, editBtn1;
     ListView workListView, workListView2;
     private String MoneyString;
     private String W_1, name1, W_2, workListView22;
-    private String r11, r22, r33;
+//    private String r11, r22, r33;
 
     private SQLiteDatabase database;
     private MyData myData;
@@ -43,6 +43,7 @@ public class Work_NAME_JOB extends AppCompatActivity {
     private ArrayList<String> stafid = new ArrayList<String>();
     private ArrayList<String> nama = new ArrayList<String>();
     private ArrayList<String> jbt = new ArrayList<String>();
+    private ArrayList<String> ID_Wor = new ArrayList<String>();
 
     private ListView userList;
     private AlertDialog.Builder build;
@@ -114,6 +115,45 @@ public class Work_NAME_JOB extends AppCompatActivity {
             }
         });
 
+        userList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
+            public boolean onItemLongClick(AdapterView<?> arg0, View arg1,  final int arg2, long arg3) {
+
+                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Work_NAME_JOB.this);
+                builder.setIcon(R.drawable.garbage_full_48);
+                builder.setTitle("ยืนยัน ลบข้อมูล วันที่ " + jbt.get(arg2));
+                builder.setMessage("คุณต้องการ ลบข้อมูล นี้หรือไม่");
+
+                builder.setPositiveButton("ลบ", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        try {
+                            database.delete(MyData.TABLE_NAME,MyData.ID_Wor + "=" + ID_Wor.get(arg2), null);
+                            Toast.makeText( getApplicationContext(), jbt.get(arg2) + " ลบข้อมูลเรียบร้อย ", Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(getApplicationContext(), String.valueOf(adapter.getItemId(position)), Toast.LENGTH_SHORT).show();
+                            displayData();
+                            dialog.cancel();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                       Toast.makeText(getApplicationContext(), "ยกเลิก การลบ แล้ว",Toast.LENGTH_LONG).show();
+                        finish();
+                    }
+                });
+                builder.show();
+                return true;
+            }
+        }); // จบ กด ค้าง
+
+    } // จบ onCreate
+
+    protected void onResume() {
+        super.onResume();
+        displayData();
+
+
 //        / เรียกฐานข้อมูล มาใช้แล้ว รวมรายได้ ทั้งหมด
 
 //        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
@@ -144,58 +184,6 @@ public class Work_NAME_JOB extends AppCompatActivity {
             e.printStackTrace();
         }
 
-    } // จบ onCreate
-
-    protected void onResume() {
-        super.onResume();
-        displayData();
-
-//        Work_ListDAO work_listDAO = new Work_ListDAO(getApplicationContext());
-//        work_listDAO.open();
-//        ArrayList<Work_ToList> myList = work_listDAO.getAllListDAO();
-//
-//        final ListView_Work adapter = new ListView_Work(this, myList);
-//        workListView.setAdapter(adapter);
-//        work_listDAO.close();
-        //กด ค้าง
-
-//        workListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
-//            public boolean onItemLongClick(AdapterView<?> patent, View view, final int position, long id) {
-//                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Work_NAME_JOB.this);
-////                builder.setPositiveButton("ลบ ไม่ได้", new DialogInterface.OnClickListener() {
-////                    public void onClick(DialogInterface dialog, int which) {
-////
-////                    }
-////                });
-//                builder.setNegativeButton("แก้ไข", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int which) {
-//
-//                        Intent eaitIntent = new Intent(getApplicationContext(), Name_Eait.class);
-//                        eaitIntent.putExtra("eait", adapter.getItem(position));
-//                        startActivity(eaitIntent);
-//                        dialog.cancel();
-//                    }
-//                });
-//                builder.show();
-//                return true;
-//            }
-//        }); // จบ กด ค้าง
-
-//        try {
-//        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
-//            Cursor cursor5 = sqLiteDatabase.rawQuery("SELECT * FROM Workoff_db WHERE ID_Emp_Wor='"
-//                    + W_2 +
-//                    "' Order By DateApp_Wor DESC;", null);
-////            Cursor cursor5 = sqLiteDatabase.rawQuery("SELECT SUM( b.Workoff_Wor),SUM( b.Withdraw_Wor),SUM((( b.Workoff_Wor)* a.Salary_Emp )- (b.Withdraw_Wor))\n" +
-////                    "FROM Employee_db a, Workoff_db b\n" +
-////                    "WHERE a.Idcard_Emp = b.ID_Emp_Wor", null);
-//            cursor5.moveToFirst();
-//            ListView workListView2 = (ListView) findViewById(R.id.work_ListView2);
-////            workListView2.setAdapter((ListAdapter) todoCursor);
-////            workListView2.setText(MoneyString = cursor5.getString(0));
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
     }
 
     private void bindWidget() {
@@ -216,34 +204,29 @@ public class Work_NAME_JOB extends AppCompatActivity {
 
     private void displayData() {
         try {
-        database = myData.getWritableDatabase();
-        //the SQL command to fetched all records from the table
-//            Cursor mCursor = database.rawQuery("SELECT * FROM  Workoff_db ", null);
-    Cursor mCursor = database.rawQuery("SELECT * FROM  Workoff_db WHERE ID_Emp_Wor= '" + W_2 + "'", null);
-//        Cursor mCursor = database.rawQuery("SELECT SUM( b.Workoff_Wor),SUM( b.Withdraw_Wor),SUM((( b.Workoff_Wor)* a.Salary_Emp )- (b.Withdraw_Wor))\n" +
-//                "FROM Employee_db a, Workoff_db b\n" +
-//                "WHERE a.Idcard_Emp = b.ID_Emp_Wor", null);
-//    reset variables
-        stafid.clear();
-        nama.clear();
-        jbt.clear();
-//
+            database = myData.getWritableDatabase();
+            Cursor mCursor = database.rawQuery("SELECT * FROM  Workoff_db WHERE ID_Emp_Wor= '" + W_2 + "' Order By DateApp_Wor DESC;", null);
+            stafid.clear();
+            nama.clear();
+            jbt.clear();
+            ID_Wor.clear();
 //    //fetch each record
-        if (mCursor.moveToFirst()) {
-            do {
-                //get data from field
-                stafid.add(mCursor.getString(mCursor.getColumnIndex(MyData.Withdraw_Wor)));
-                nama.add(mCursor.getString(mCursor.getColumnIndex(MyData.Workoff_Wor)));
-                jbt.add(mCursor.getString(mCursor.getColumnIndex(MyData.DateApp_Wor)));
+            if (mCursor.moveToFirst()) {
+                do {
+                    //get data from field
+                    stafid.add(mCursor.getString(mCursor.getColumnIndex(MyData.Withdraw_Wor)));
+                    nama.add(mCursor.getString(mCursor.getColumnIndex(MyData.Workoff_Wor)));
+                    jbt.add(mCursor.getString(mCursor.getColumnIndex(MyData.DateApp_Wor)));
+                    ID_Wor.add(mCursor.getString(mCursor.getColumnIndex(MyData.ID_Wor)));
 
-            } while (mCursor.moveToNext());
-            //do above till data exhausted
-        }
+                } while (mCursor.moveToNext());
+                //do above till data exhausted
+            }
 
-        //display to screen
-        DisplayAdapter disadpt = new DisplayAdapter(Work_NAME_JOB.this, stafid, nama, jbt);
-        userList.setAdapter(disadpt);
-        mCursor.close();
+            //display to screen
+            DisplayAdapter disadpt = new DisplayAdapter(Work_NAME_JOB.this, stafid, nama, jbt);
+            userList.setAdapter(disadpt);
+            mCursor.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
