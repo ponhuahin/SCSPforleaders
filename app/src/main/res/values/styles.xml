@@ -31,5 +31,23 @@
     <style name="counterOverride">
         <item name="android:textColor">#ff0000</item>
     </style>
+    <style name="AppTheme.YellowButton">
+        <item name="colorButtonNormal">@color/po0</item>
+    </style>
+    <style name="AppTheme.SignUpbut">
+        <item name="colorButtonNormal">@color/pp</item>
+    </style>
+    <style name="AppTheme.p1">
+        <item name="colorButtonNormal">#faaf64</item>
+    </style>
+    <style name="AppTheme.p2">
+        <item name="colorButtonNormal">#a7794e</item>
+    </style>
+    <style name="AppTheme.p3">
+        <item name="colorButtonNormal">#a76f3a</item>
+    </style>
+    <style name="AppTheme.p4">
+        <item name="colorButtonNormal">#d6f9ee91</item>
+    </style>
 
 </resources>

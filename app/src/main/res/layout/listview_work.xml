@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginRight="20dp"
-            android:gravity="right"
+            android:gravity="center"
             android:text="เบิก "
             android:textColor="@color/lv2"
             android:textSize="15sp" />

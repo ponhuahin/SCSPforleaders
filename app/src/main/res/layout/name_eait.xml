@@ -2,9 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    android:background="@drawable/pon2121"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pon2121"
     android:orientation="vertical">
 
     <ScrollView
@@ -69,8 +69,8 @@
                             android:layout_height="wrap_content"
                             android:drawableLeft="@drawable/coins_money_stack16"
                             android:drawablePadding="10dp"
-                            android:inputType="number"
                             android:hint="เงิน/วัน :"
+                            android:inputType="number"
                             android:textSize="15dp" />
                     </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
@@ -160,24 +160,24 @@
                             android:orientation="horizontal">
 
                             <RadioButton
-                                android:onClick="RadioButtonClicked"
                                 android:id="@+id/Sex_Emp1_eait"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:layout_weight="1"
                                 android:checked="false"
+                                android:onClick="RadioButtonClicked"
                                 android:text="หญิง"
                                 android:textSize="15dp" />
 
                             <RadioButton
-                                android:onClick="RadioButtonClicked"
                                 android:id="@+id/Sex_Emp2_eait"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:layout_weight="4"
                                 android:checked="false"
+                                android:onClick="RadioButtonClicked"
                                 android:text="ชาย"
                                 android:textSize="15dp" />
                         </RadioGroup>
@@ -322,34 +322,34 @@
             </LinearLayout>
             <!--         กรอบ    จบ     -->
             <LinearLayout
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
                 <Button
-                    android:layout_weight="1"
                     android:id="@+id/Name_Save_eait"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/po0"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:text="บันทึก"
                     android:textColor="@color/pp"
                     android:textSize="16dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:theme="@style/AppTheme.YellowButton" />
 
                 <Button
                     android:id="@+id/Name_cancel_eait"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/pp"
-                    android:text="ลบ"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="ลบ"
                     android:textSize="16dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:theme="@style/AppTheme.SignUpbut" />
             </LinearLayout>
 
         </LinearLayout>

@@ -133,6 +133,7 @@
                                 android:textSize="15dp" />
                         </android.support.design.widget.TextInputLayout>
                     </LinearLayout>
+
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -264,19 +265,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@color/po0"
                         android:text="บันทึก"
                         android:textColor="@color/pp"
                         android:textSize="16dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:theme="@style/AppTheme.YellowButton" />
 
                     <Button
-                        android:background="@color/po4"
                         android:id="@+id/job_But_cancel_edit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="ลบ" />
+                        android:text="ลบ"
+                        android:theme="@style/AppTheme.SignUpbut" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

@@ -15,16 +15,16 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:gravity="center"
-            android:textStyle="bold"
             android:text="แก้ไขบัญชี SCSP"
             android:textColor="#702809"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <LinearLayout
-            android:layout_margin="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView"
+            android:layout_margin="30dp"
             android:background="@drawable/fieldshape"
             android:orientation="vertical"
             android:padding="20dp">
@@ -70,35 +70,34 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <Button
-                android:layout_margin="5dp"
                 android:id="@+id/SignInbut_Save_Eait"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@color/po0"
                 android:text="บันทึก"
                 android:textColor="@color/pp"
                 android:textSize="16dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:theme="@style/AppTheme.YellowButton" />
 
             <Button
-                android:layout_margin="5dp"
                 android:id="@+id/SignInbut_cancel_Eait"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@color/pp"
                 android:text="ลบ"
-
                 android:textSize="16dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:theme="@style/AppTheme.SignUpbut" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

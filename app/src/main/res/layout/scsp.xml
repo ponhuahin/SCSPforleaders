@@ -27,7 +27,7 @@
                 android:layout_width="200dp"
                 android:layout_height="100dp"
                 android:layout_marginBottom="50dp"
-                android:src="@drawable/ddd1112" />
+                android:src="@drawable/ddd1112_1" />
 
             <!--<TextView-->
             <!--android:id="@+id/admin_db1"-->
@@ -141,15 +141,11 @@
             <!--android:drawableTop="@drawable/a1"-->
             <!--android:drawableBottom="@drawable/a1"-->
             <Button
+                android:theme="@style/AppTheme.p1"
                 android:id="@+id/p1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="2.5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="2.5dp"
-                android:layout_marginTop="5dp"
                 android:layout_weight="1"
-                android:background="#faaf64"
                 android:drawableBottom="@drawable/aaa"
                 android:drawablePadding="0dp"
                 android:drawableTop="@drawable/aaa1"
@@ -163,12 +159,8 @@
                 android:id="@+id/p2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="2.5dp"
-                android:layout_marginLeft="2.5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
                 android:layout_weight="1"
-                android:background="#a7794e"
+                android:theme="@style/AppTheme.p2"
                 android:drawableBottom="@drawable/aaa"
                 android:drawablePadding="0dp"
                 android:drawableTop="@drawable/aaa4"
@@ -189,12 +181,8 @@
                 android:id="@+id/p4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="2.5dp"
-                android:layout_marginTop="2.5dp"
                 android:layout_weight="1"
-                android:background="#a76f3a"
+                android:theme="@style/AppTheme.p3"
                 android:drawableBottom="@drawable/aaa"
                 android:drawablePadding="0dp"
                 android:drawableTop="@drawable/aaa3"
@@ -207,12 +195,8 @@
                 android:id="@+id/p5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="2.5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="2.5dp"
                 android:layout_weight="1"
-                android:background="#d6f9ee91"
+                android:theme="@style/AppTheme.p4"
                 android:drawableBottom="@drawable/aaa"
                 android:drawablePadding="0dp"
                 android:drawableTop="@drawable/aaa2"

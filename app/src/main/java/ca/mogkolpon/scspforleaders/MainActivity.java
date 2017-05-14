@@ -98,11 +98,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void sss(View view){
-        Button sss1 = (Button)findViewById(R.id.sss);
-        Intent intent = new Intent(MainActivity.this,SCSP.class);
-        startActivity(intent);
-    }
+//    public void sss(View view){
+//        Button sss1 = (Button)findViewById(R.id.sss);
+//        Intent intent = new Intent(MainActivity.this,SCSP.class);
+//        startActivity(intent);
+//    }
 
     public void onBackPressed(){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
