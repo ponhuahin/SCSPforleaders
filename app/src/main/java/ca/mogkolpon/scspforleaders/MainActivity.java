@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
         alertDialog.setTitle("SCSP forleaders");
         alertDialog.setMessage("คุณต้องการออกจากโปรแกรมหรือไม่ ?");
-        alertDialog.setIcon(R.drawable.ddd1112);
+        alertDialog.setIcon(R.drawable.ddd1112_1);
         alertDialog.setPositiveButton("ใช้",  new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
