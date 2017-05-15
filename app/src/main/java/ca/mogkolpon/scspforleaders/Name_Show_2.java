@@ -3,25 +3,24 @@ package ca.mogkolpon.scspforleaders;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class Name_Show extends AppCompatActivity {
+public class Name_Show_2 extends AppCompatActivity {
     ListView nameListView;
     private SQLiteDatabase database;
     private MyData myData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.name_show);
-
-        nameListView = (ListView) findViewById(R.id.name_ListView);
+        setContentView(R.layout.name__show_2);
+        nameListView = (ListView) findViewById(R.id.name_ListView_2);
 
 
     } // จบ onCreate
@@ -32,7 +31,7 @@ public class Name_Show extends AppCompatActivity {
         name_listDAO1.open();
         ArrayList<Name_ToList> myList = name_listDAO1.getAllListDAO();
 
-        final ListView_Name adapter = new ListView_Name(this, myList);
+        final ListView_Name_2 adapter = new ListView_Name_2(this, myList);
         nameListView.setAdapter(adapter);
         name_listDAO1.close();
 
@@ -54,23 +53,21 @@ public class Name_Show extends AppCompatActivity {
                 }
             }
         });//  จบ กด ปกติ
-
-        //กด ค้าง
+//กด ค้าง
         nameListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
             public boolean onItemLongClick(AdapterView<?> patent, View view, final int position, long id) {
-                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Name_Show.this);
-                Intent eaitIntent = new Intent(getApplicationContext(), Name_Show_2.class);
+                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Name_Show_2.this);
+                Intent eaitIntent = new Intent(getApplicationContext(), Name_Eait.class);
                 eaitIntent.putExtra("eait", adapter.getItem(position));
                 startActivity(eaitIntent);
                 builder.show();
                 return true;
             }
         }); // จบ กด ค้าง
-
-        //กด ค้าง
+//        //กด ค้าง
 //        nameListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
 //            public boolean onItemLongClick(AdapterView<?> patent, View view, final int position, long id) {
-//                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Name_Show.this);
+//                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Name_Show_2.this);
 ////                builder.setPositiveButton("ลบ ไม่ได้", new DialogInterface.OnClickListener() {
 ////                    public void onClick(DialogInterface dialog, int which) {
 ////                        try {
@@ -96,9 +93,4 @@ public class Name_Show extends AppCompatActivity {
 //            }
 //        }); // จบ กด ค้าง
     } // จบ onResume
-//    public void onBackPressed(){
-//        Intent intent = new Intent(Name_Show.this, SCSP.class);
-//        startActivity(intent);
-//        finish();
-//    }
 }// จบ class Name_Show
