@@ -4,6 +4,7 @@ package ca.mogkolpon.scspforleaders;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -18,15 +19,19 @@ import android.graphics.BitmapFactory;
 
 import com.squareup.picasso.Picasso;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+
 public class Name_Eait_2 extends AppCompatActivity {
-    private ImageView imageView ;
+    private ImageView imageView, imageView2;
     private String W_1, name1, W_2, workListView22;
     private String t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12;
-    private int t0,t15;
+    private int t0, t15;
     Cursor mCursor;
     String name;
     private SQLiteDatabase database;
     private MyData myData;
+    Bitmap bitmap = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +58,7 @@ public class Name_Eait_2 extends AppCompatActivity {
         final EditText A10 = (EditText) findViewById(R.id.Line_Emp_eait);
         final EditText A11 = (EditText) findViewById(R.id.Facebook_Emp_eait);
         final EditText A12 = (EditText) findViewById(R.id.Email_Emp_eait);      //
-//        imageView = (ImageView) findViewById(R.id.Image_Emp_eait);
+        imageView = (ImageView) findViewById(R.id.Image_Emp_eait);
 
         A1.setText(t1 = mCursor.getString(1));
         A2.setText(t2 = mCursor.getString(2));
@@ -68,7 +73,19 @@ public class Name_Eait_2 extends AppCompatActivity {
         A11.setText(t11 = mCursor.getString(12));
         A12.setText(t12 = mCursor.getString(13));
 
-        //Show Image
+//        byte[] imageView = mCursor.getBlob(15);
+
+        byte[] temp_image = mCursor.getBlob(15);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(temp_image , 0, temp_image .length);
+        imageView.setImageBitmap(bitmap);
+//        File imgFile = new File("your file path from sqlite");
+//        if(imgFile.exists()) {
+//            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+//            ImageView myImage = (ImageView) findViewById(R.id.Image_Emp_eait);
+//            myImage.setImageBitmap(myBitmap);
+//        }
+//        imageView2.setImage(imageView = mCursor.getBlob(15));
+//        Show Image
 //        Picasso.with(this)
 ////                .load(getIntent().getStringExtra(String.valueOf(15)))
 //                .load(getIntent().getByteExtra(mCursor.getString(15)))
@@ -122,4 +139,6 @@ public class Name_Eait_2 extends AppCompatActivity {
             }
         });
     } // จบ onCreate
+
+
 } // จบ class Name_Eait

@@ -121,7 +121,7 @@ public class Name_Show_2 extends AppCompatActivity {
         //กด ค้าง
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
             public boolean onItemLongClick(AdapterView<?> patent, View view, final int position, long id) {
-                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Name_Show_2.this);
+//                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Name_Show_2.this);
                 try {
                     cursor.moveToPosition(position);
                     String name = cursor.getString(cursor.getColumnIndex(MyData.ID_Emp));
@@ -136,7 +136,7 @@ public class Name_Show_2 extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                builder.show();
+//                builder.show();
                 return true;
             }
         }); // จบ กด ค้าง

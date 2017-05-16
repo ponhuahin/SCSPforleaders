@@ -2,11 +2,14 @@ package ca.mogkolpon.scspforleaders;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -30,7 +33,7 @@ public class Work_NAME_JOB_2 extends AppCompatActivity {
     private int t0;
     private SQLiteDatabase database;
     private MyData myData;
-
+    private ImageView imageView;
 //    DatabaseStudent mHelper;  //เท่ากับ MyData
 //    SQLiteDatabase mDb;
     Cursor mCursor;
@@ -69,12 +72,17 @@ public class Work_NAME_JOB_2 extends AppCompatActivity {
         final TextView B3 = (TextView) findViewById(R.id.W_Idcard);
         final TextView B4 = (TextView) findViewById(R.id.W_Position);
         final TextView B5 = (TextView) findViewById(R.id.W_Salary);
+        imageView = (ImageView) findViewById(R.id.imageView2);
 //        B1.setText(mCursor.getName_Emp());
         B1.setText(t1 = mCursor.getString(4));
         B2.setText(t2 = mCursor.getString(5));
         B3.setText(W_2 = mCursor.getString(3));
         B4.setText(t4 = mCursor.getString(1));
         B5.setText(W_1 = mCursor.getString(2));
+
+        byte[] temp_image = mCursor.getBlob(15);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(temp_image , 0, temp_image .length);
+        imageView.setImageBitmap(bitmap);
 
 //        final EditText editLastName = (EditText)findViewById(R.id.editLastName);
 //        editLastName.setText(lastname);
