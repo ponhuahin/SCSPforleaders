@@ -134,10 +134,12 @@ public class Z_MyDataList {
         Image_Emp = image_Emp;
     }
 
-    public Z_MyDataList(int ID_Emp, String name_Emp, String nickname_Emp,String age_Emp,
+    public Z_MyDataList(int ID_Emp, String Position_Emp,String Salary_Emp,String name_Emp, String nickname_Emp,String age_Emp,
                       byte[] image_Emp) {
 
         this.ID_Emp = ID_Emp;
+        this.Position_Emp=Position_Emp;
+        this.Salary_Emp=Salary_Emp;
         this.Name_Emp = name_Emp;
         this.Nickname_Emp = nickname_Emp;
         this.Age_Emp = age_Emp;

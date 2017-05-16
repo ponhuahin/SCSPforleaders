@@ -23,9 +23,9 @@ public class ListView_Name_2 extends BaseAdapter {
     private static Activity activity;
     private static LayoutInflater inflater;
     private  int layout;
-    ArrayList<Name_ToList> myNameToList;
+    ArrayList<Z_MyDataList> myNameToList;
 
-    public ListView_Name_2(Activity activity, ArrayList<Name_ToList> mtNameToList) {
+    public ListView_Name_2(Activity activity,int layout, ArrayList<Z_MyDataList> mtNameToList) {
         this.myNameToList = mtNameToList;
         this.activity = activity;
         this.layout = layout;
@@ -40,7 +40,7 @@ public class ListView_Name_2 extends BaseAdapter {
     }
 
     @Override
-    public Name_ToList getItem(int position) {
+    public Z_MyDataList getItem(int position) {
         return myNameToList.get(position);
     }
 
@@ -55,9 +55,9 @@ public class ListView_Name_2 extends BaseAdapter {
         ViewHolder holder = new ViewHolder();
 
         if(row == null){
-            row = inflater.inflate(R.layout.listview_name_2, null);
-//            LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//            row = inflater.inflate(layout, null);
+//            row = inflater.inflate(R.layout.listview_name_2, null);
+            LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            row = inflater.inflate(layout, null);
 
             holder.txtName = (TextView) row.findViewById(R.id.name_ListView_name);
             holder.txtPosition = (TextView) row.findViewById(R.id.name_ListView_Position);
@@ -71,7 +71,7 @@ public class ListView_Name_2 extends BaseAdapter {
             holder = (ViewHolder) row.getTag();
         }
 
-        Name_ToList food = myNameToList.get(position);
+        Z_MyDataList food = myNameToList.get(position);
 
         holder.txtName.setText(food.getName_Emp());
         holder.txtPosition.setText(food.getPosition_Emp());

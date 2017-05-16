@@ -45,13 +45,13 @@ public class Name_Show extends AppCompatActivity {
                 eaitIntent.putExtra("eait", adapter.getItem(position));
                 startActivity(eaitIntent);
                 // ทดลองเพิ่ม
-                try {
-                    Intent eaitIntent1 = new Intent(getApplicationContext(), Work_ListDAO.class);
-                    eaitIntent1.putExtra("eait", adapter.getItem(position));
-                    startActivity(eaitIntent1);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    Intent eaitIntent1 = new Intent(getApplicationContext(), Work_ListDAO.class);
+//                    eaitIntent1.putExtra("eait", adapter.getItem(position));
+//                    startActivity(eaitIntent1);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
             }
         });//  จบ กด ปกติ
 

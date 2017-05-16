@@ -76,12 +76,12 @@
                         android:text="ชื่อเล่น "
                         android:textColor="@color/lv2"
                         android:textSize="18sp" />
-                    <Button
-                        android:text="บันทึก"
-                        android:gravity="center"
-                        android:textColor="#111111"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                    <!--<Button-->
+                        <!--android:text="บันทึก"-->
+                        <!--android:gravity="center"-->
+                        <!--android:textColor="#111111"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content" />-->
 
                 </LinearLayout>
             </LinearLayout>

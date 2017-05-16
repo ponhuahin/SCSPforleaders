@@ -86,6 +86,8 @@ public class Name_ListDAO {
         values.put("Line_Emp",updateTodoList.getLine_Emp());
         values.put("Facebook_Emp",updateTodoList.getFacebook_Emp());
         values.put("Email_Emp",updateTodoList.getEmail_Emp());
+//
+//        values.put("Image_Emp",updateTodoList.getImage_Emp());
 
         String where = "ID_Emp=" + updateTodoList.getID_Emp();
         this.database.update("Employee_db",values, where,null);

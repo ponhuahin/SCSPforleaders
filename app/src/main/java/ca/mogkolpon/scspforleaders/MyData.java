@@ -22,6 +22,9 @@ public static final String ID_Wor="ID_Wor";
     public static final String ID_Emp_Wor="ID_Emp_Wor";
     public static final String DateApp_Wor="DateApp_Wor";
 
+    public static final String TABLE_NAME_Emp="Employee_db";
+    public static final String ID_Emp="ID_Emp";
+
 
     private static final String tableCreateSQL1 = "CREATE TABLE admin_db (" +
             "ID_admin INTEGER PRIMARY KEY AUTOINCREMENT, " +

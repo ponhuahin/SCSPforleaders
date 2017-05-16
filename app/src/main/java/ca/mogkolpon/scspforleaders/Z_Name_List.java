@@ -30,13 +30,22 @@ public class Z_Name_List extends AppCompatActivity {
         list.clear();
         while (cursor.moveToNext()) {
 
+//            int ID_Emp = cursor.getInt(0);
+//            String Name_Emp = cursor.getString(1);
+//            String Nickname_Emp = cursor.getString(2);
+//            String Age_Emp = cursor.getString(3);
+//            byte[] image = cursor.getBlob(12);
+
             int ID_Emp = cursor.getInt(0);
-            String Name_Emp = cursor.getString(1);
-            String Nickname_Emp = cursor.getString(2);
-            String Age_Emp = cursor.getString(3);
+            String Position_Emp = cursor.getString(1);
+            String Salary_Emp = cursor.getString(2);
+            String Name_Emp = cursor.getString(3);
+            String Nickname_Emp = cursor.getString(5);
+            String Age_Emp = cursor.getString(8);
             byte[] image = cursor.getBlob(12);
 
-            list.add(new Z_MyDataList(ID_Emp, Name_Emp, Nickname_Emp, Age_Emp, image));
+//            list.add(new Z_MyDataList(ID_Emp, Name_Emp, Nickname_Emp, Age_Emp, image));
+            list.add(new Z_MyDataList(ID_Emp,Position_Emp,Salary_Emp, Name_Emp, Nickname_Emp, Age_Emp, image));
         }
         adapter.notifyDataSetChanged();
         // กด ปกติ

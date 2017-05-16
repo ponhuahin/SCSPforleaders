@@ -31,7 +31,9 @@
         <activity android:name=".Work_NAME_JOB" />
         <activity android:name=".P1" />
         <activity android:name=".Report_Show" />
-        <activity android:name=".Name_Show_2"></activity>
+        <activity android:name=".Name_Show_2" />
+        <activity android:name=".Work_NAME_JOB_2" />
+        <activity android:name=".Name_Eait_2"></activity>
     </application>
 
 </manifest>

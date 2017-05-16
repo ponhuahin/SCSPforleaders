@@ -81,9 +81,10 @@ public class SCSP extends AppCompatActivity {
 
     public void p2(View view) { // เบิกเงิน
         Button p2 = (Button) findViewById(R.id.p2);
-        Intent intent = new Intent(SCSP.this, Name_Show.class);
+        Intent intent = new Intent(SCSP.this, Name_Show_2.class);
         startActivity(intent);
     }// จบ p2
+
 //
 //    public void p3(View view) { // ทำงาน
 //        Button p3 = (Button) findViewById(R.id.p3);
