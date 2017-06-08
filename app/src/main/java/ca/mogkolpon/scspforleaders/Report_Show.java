@@ -27,7 +27,6 @@ public class Report_Show extends AppCompatActivity {
         setContentView(R.layout.report_show);
         workListView = (ListView) findViewById(R.id.work_ListView1);
 
-
     }
 
 
@@ -72,6 +71,13 @@ public class Report_Show extends AppCompatActivity {
                         SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyData.database_name, MODE_PRIVATE, null);
                         Cursor cursor5 = sqLiteDatabase.rawQuery("DELETE FROM Workoff_db", null);
                         cursor5.moveToFirst();
+
+                        finish();
+                        overridePendingTransition(0, 0);
+                        startActivity(getIntent());
+                        overridePendingTransition(0, 0);
+
+//                        onCreate(null);
                     }
                 });
                 builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {

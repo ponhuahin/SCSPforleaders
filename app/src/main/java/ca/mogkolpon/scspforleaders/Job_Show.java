@@ -43,25 +43,29 @@ public class Job_Show extends AppCompatActivity {
 
             }
         });
-// กดค้าง
+//// กดค้าง
 //        jobListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
 //            public boolean onItemLongClick(AdapterView<?> patent, View view, final int position, long id) {
 //                AlertDialog.Builder builder = new AlertDialog.Builder(Job_Show.this);
 //
+//                Toast.makeText(getApplicationContext(), String.valueOf(adapter.getItemId(position)), Toast.LENGTH_SHORT).show();
+//                Intent editIntent = new Intent(getApplicationContext(), Job_Show_Name.class);
+//                editIntent.putExtra("editTodoList",adapter.getItem(position));
+//                startActivity(editIntent);
 ////                builder.setPositiveButton("ลบ ไม่ได้", new DialogInterface.OnClickListener() {
 ////                    public void onClick(DialogInterface dialog, int which) {
 ////
 ////                    }
 ////                });
-//                builder.setNegativeButton("แก้ไข/ลบ", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        Intent editIntent = new Intent(getApplicationContext(), Job_Edit.class);
-//                        editIntent.putExtra("editTodoList",adapter.getItem(position));
-//                        startActivity(editIntent);
-//                        dialog.cancel();
-//                    }
-//                });
-//                builder.show();
+////                builder.setNegativeButton("แก้ไข/ลบ", new DialogInterface.OnClickListener() {
+////                    public void onClick(DialogInterface dialog, int which) {
+////                        Intent editIntent = new Intent(getApplicationContext(), Job_Edit.class);
+////                        editIntent.putExtra("editTodoList",adapter.getItem(position));
+////                        startActivity(editIntent);
+////                        dialog.cancel();
+////                    }
+////                });
+////                builder.show();
 //                return true;
 //            }
 //        });

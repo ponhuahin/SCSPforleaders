@@ -56,7 +56,7 @@
                         android:id="@+id/name_ListView_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="จริง"
+                        android:text="เล่น"
                         android:textColor="#000000"
                         android:textSize="15sp" />
                 </LinearLayout>
@@ -78,13 +78,23 @@
                         android:textColor="@color/lv2"
                         android:textSize="18sp"
                         android:textStyle="bold" />
-                    <!--<Button-->
-                    <!--android:text="บันทึก"-->
-                    <!--android:gravity="center"-->
-                    <!--android:textColor="#111111"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content" />-->
 
+                    <!--<Button-->
+                        <!--android:id="@+id/Button_add"-->
+                        <!--android:layout_width="30dp"-->
+                        <!--android:layout_height="40dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text=""-->
+                        <!--android:textColor="#111111" />-->
+                    <!--<CheckBox-->
+                    <!--android:id="@+id/CheckBox_Emp"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:focusable="false"-->
+                    <!--/>-->
+                    <!--android:focusable="false"-->
+                    <!--android:clickable="false"-->
+                    <!--android:checked="true"-->
                 </LinearLayout>
             </LinearLayout>
 

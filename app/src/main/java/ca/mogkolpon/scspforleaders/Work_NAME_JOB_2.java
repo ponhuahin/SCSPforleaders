@@ -29,12 +29,12 @@ public class Work_NAME_JOB_2 extends AppCompatActivity {
     ListView workListView, workListView2;
     private String MoneyString;
     private String W_1, name1, W_2, workListView22;
-    private String t1,t2,t3,t4,t5;
+    private String t1, t2, t3, t4, t5;
     private int t0;
     private SQLiteDatabase database;
     private MyData myData;
     private ImageView imageView;
-//    DatabaseStudent mHelper;  //เท่ากับ MyData
+    //    DatabaseStudent mHelper;  //เท่ากับ MyData
 //    SQLiteDatabase mDb;
     Cursor mCursor;
     String name, lastname, school;
@@ -62,7 +62,7 @@ public class Work_NAME_JOB_2 extends AppCompatActivity {
         database = myData.getWritableDatabase();
 
         mCursor = database.rawQuery("SELECT * FROM Employee_db "
-                + " WHERE ID_Emp ='" + name + "'" , null);
+                + " WHERE ID_Emp ='" + name + "'", null);
 
 //        final EditText editName = (EditText)findViewById(R.id.W_Name);
 //        editName.setText(name);
@@ -81,7 +81,7 @@ public class Work_NAME_JOB_2 extends AppCompatActivity {
         B5.setText(W_1 = mCursor.getString(2));
 
         byte[] temp_image = mCursor.getBlob(15);
-        Bitmap bitmap = BitmapFactory.decodeByteArray(temp_image , 0, temp_image .length);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(temp_image, 0, temp_image.length);
         imageView.setImageBitmap(bitmap);
 
 //        final EditText editLastName = (EditText)findViewById(R.id.editLastName);
@@ -111,9 +111,18 @@ public class Work_NAME_JOB_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final Calendar c = Calendar.getInstance();
+                SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat ff = new SimpleDateFormat("HH:mm:ss");
+                SimpleDateFormat gg = new SimpleDateFormat("dd/MM/yyyy (HH:mm:ss)");
+                String AddDate = df.format(c.getTime());
+                String AddV = ff.format(c.getTime());
+                String Addate_V = gg.format(c.getTime());
+
                 // ดึงวัน เวลา มาจากเครื่องคอม
-                SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy (HH:mm:ss)");
-                String formattedDate = df.format(c.getTime());
+//                SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy (HH:mm:ss)");
+//                SimpleDateFormat df2 = new SimpleDateFormat("dd/MM/yyyy");
+//                SimpleDateFormat ff = new SimpleDateFormat("HH:mm:ss");
+//                String formattedDate = df.format(c.getTime());
                 //
                 Name_ToList name_toList1 = new Name_ToList();
                 name_toList1.setID_Emp(t0 = mCursor.getInt(0));
@@ -127,11 +136,11 @@ public class Work_NAME_JOB_2 extends AppCompatActivity {
                 MyWork myWork = new MyWork(Work_NAME_JOB_2.this);
                 myWork.addNewValue(Workoff_WorString,   //ทำงาน / หยุด
                         W_Name,             //งาน
-                        formattedDate,                   //เวลาทำงาน
-                        formattedDate,                  //เวลาเลิกงาน
+                        AddDate,                   //เวลาทำงาน
+                        AddV,                  //เวลาเลิกงาน
                         Withdraw_WorString,             // เบิก
                         W_Idcard,                       // รหัสบัตรประชาชน
-                        formattedDate);                 // วันที่ บันทึก
+                        Addate_V);                 // วันที่ บันทึก
                 finish();
             }
         });
@@ -145,7 +154,7 @@ public class Work_NAME_JOB_2 extends AppCompatActivity {
         });
 
         userList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
-            public boolean onItemLongClick(AdapterView<?> arg0, View arg1,  final int arg2, long arg3) {
+            public boolean onItemLongClick(AdapterView<?> arg0, View arg1, final int arg2, long arg3) {
 
                 android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Work_NAME_JOB_2.this);
                 builder.setIcon(R.drawable.garbage_full_48);
@@ -155,8 +164,8 @@ public class Work_NAME_JOB_2 extends AppCompatActivity {
                 builder.setPositiveButton("ลบ", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         try {
-                            database.delete(MyData.TABLE_NAME,MyData.ID_Wor + "=" + ID_Wor.get(arg2), null);
-                            Toast.makeText( getApplicationContext(), jbt.get(arg2) + " ลบข้อมูลเรียบร้อย ", Toast.LENGTH_SHORT).show();
+                            database.delete(MyData.TABLE_NAME, MyData.ID_Wor + "=" + ID_Wor.get(arg2), null);
+                            Toast.makeText(getApplicationContext(), jbt.get(arg2) + " ลบข้อมูลเรียบร้อย ", Toast.LENGTH_SHORT).show();
 //                                Toast.makeText(getApplicationContext(), String.valueOf(adapter.getItemId(position)), Toast.LENGTH_SHORT).show();
                             displayData();
                             dialog.cancel();
@@ -167,7 +176,7 @@ public class Work_NAME_JOB_2 extends AppCompatActivity {
                 });
                 builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(), "ยกเลิก การลบ แล้ว",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "ยกเลิก การลบ แล้ว", Toast.LENGTH_LONG).show();
                         finish();
                     }
                 });

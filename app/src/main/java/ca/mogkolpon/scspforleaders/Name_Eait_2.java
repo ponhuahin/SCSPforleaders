@@ -1,6 +1,8 @@
 package ca.mogkolpon.scspforleaders;
 
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.BitmapFactory;
@@ -130,12 +132,37 @@ public class Name_Eait_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    database.delete(MyData.TABLE_NAME_Emp, MyData.ID_Emp + "=" + name, null);
-                    Toast.makeText(getApplicationContext(), name + " ลบข้อมูลเรียบร้อย ", Toast.LENGTH_SHORT).show();
+                    android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Name_Eait_2.this);
+                    builder.setIcon(R.drawable.garbage_full_48);
+                    builder.setTitle("ยืนยัน ลบข้อมูล ");
+                    builder.setMessage("คุณต้องการ ลบข้อมูล นี้หรือไม่");
+                    builder.setPositiveButton("ลบ", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            try {
+                                database.delete(MyData.TABLE_NAME_Emp, MyData.ID_Emp + "=" + name, null);
+                                Toast.makeText(getApplicationContext(), name + " ลบข้อมูลเรียบร้อย ", Toast.LENGTH_SHORT).show();
+                                finish();
+                                Intent intent = new Intent(Name_Eait_2.this, Name_Show_2.class);
+                                startActivity(intent);
+                                onCreate(null);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                    builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(getApplicationContext(), "ยกเลิก การลบ แล้ว", Toast.LENGTH_LONG).show();
+                            finish();
+                        }
+                    });
+                builder.show();
+//                    database.delete(MyData.TABLE_NAME_Emp, MyData.ID_Emp + "=" + name, null);
+//                    Toast.makeText(getApplicationContext(), name + " ลบข้อมูลเรียบร้อย ", Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                finish();
+//                finish();
             }
         });
     } // จบ onCreate

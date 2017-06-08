@@ -103,7 +103,8 @@ public class Job_Add extends AppCompatActivity {
                         address_com_job.equals("") ||   //ที่อยุ่บริษัท
                         tele_job.equals("") ||          //เบอร์โทร
                         email_job.equals("")) {         //อีเมล
-                    Toast.makeText(Job_Add.this, getResources().getString(R.string.haveSpace), Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(Job_Add.this, getResources().getString(R.string.haveSpace), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), name_job + " บันทึกข้อมูลเรียบร้อย ", Toast.LENGTH_SHORT).show();
                 } else {
                     MyJob myJob = new MyJob(Job_Add.this);
                     myJob.addNewValue(name_job,

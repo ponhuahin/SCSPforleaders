@@ -1,10 +1,12 @@
 package ca.mogkolpon.scspforleaders;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Job_Edit extends AppCompatActivity {
 
@@ -73,6 +75,7 @@ public class Job_Edit extends AppCompatActivity {
                 job_ListView_DAO.update(eTodo_JOB);                                      //อัพเดก
                 job_ListView_DAO.close();                                                //ปิด
                 finish();                                                           //เแก้ไข แล้ว ปิด หน้านี้
+                Toast.makeText(getApplicationContext(), " บันทึกข้อมูลเรียบร้อย ", Toast.LENGTH_SHORT).show();
             }
         });
         // ปุ้ม ลบ ข้อมูล  //
@@ -80,11 +83,43 @@ public class Job_Edit extends AppCompatActivity {
         delBtn.setOnClickListener(new View.OnClickListener() {                      //
             @Override
             public void onClick(View v) {
-                Job_ListDAO job_ListView_DAO1 =new Job_ListDAO(getApplicationContext());
-                job_ListView_DAO1.open();
-                job_ListView_DAO1.delete(editTodoList);
-                job_ListView_DAO1.close();
-                finish();
+                try {
+                    android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Job_Edit.this);
+                    builder.setIcon(R.drawable.garbage_full_48);
+                    builder.setTitle("ยืนยัน ลบข้อมูล ");
+                    builder.setMessage("คุณต้องการ ลบข้อมูล นี้หรือไม่");
+                    builder.setPositiveButton("ลบ", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            try {
+                                Job_ListDAO job_ListView_DAO1 =new Job_ListDAO(getApplicationContext());
+                                job_ListView_DAO1.open();
+                                job_ListView_DAO1.delete(editTodoList);
+                                job_ListView_DAO1.close();
+                                finish();
+                                Toast.makeText(getApplicationContext(), " ลบข้อมูลเรียบร้อย ", Toast.LENGTH_SHORT).show();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                    builder.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(getApplicationContext(), "ยกเลิก การลบ แล้ว", Toast.LENGTH_LONG).show();
+                            finish();
+                        }
+                    });
+                    builder.show();
+//                    database.delete(MyData.TABLE_NAME_Emp, MyData.ID_Emp + "=" + name, null);
+//                    Toast.makeText(getApplicationContext(), name + " ลบข้อมูลเรียบร้อย ", Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+//                finish();
+//                Job_ListDAO job_ListView_DAO1 =new Job_ListDAO(getApplicationContext());
+//                job_ListView_DAO1.open();
+//                job_ListView_DAO1.delete(editTodoList);
+//                job_ListView_DAO1.close();
+//                finish();
             }
         });
     }

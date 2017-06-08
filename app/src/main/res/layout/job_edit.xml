@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:text="รับงาน"
+                android:text="แก้ไข รับงาน"
                 android:textSize="30dp"
                 android:textStyle="bold" />
 
@@ -265,7 +265,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="บันทึก"
+                        android:text="บันทึกแก้ไข"
                         android:textColor="@color/pp"
                         android:textSize="16dp"
                         android:textStyle="bold"
